@@ -1,0 +1,46 @@
+PODS:
+  - AFImageHelper (3.2.1)
+  - Alamofire (4.5.0)
+  - Crashlytics (3.8.5):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.12)
+  - IHKeyboardAvoiding (4.0)
+  - Localize-Swift (1.7.1)
+  - ReachabilitySwift (3)
+  - SlideMenuControllerSwift (3.0.2)
+  - SVProgressHUD (2.1.2)
+  - SwiftyUserDefaults (3.0.0)
+  - Toast (3.1.0)
+  - UIScrollView-InfiniteScroll (1.0.2)
+
+DEPENDENCIES:
+  - AFImageHelper (~> 3.2.1)
+  - Alamofire (~> 4.5.0)
+  - Crashlytics
+  - Fabric
+  - IHKeyboardAvoiding (~> 4.0)
+  - Localize-Swift (~> 1.7.1)
+  - ReachabilitySwift (~> 3)
+  - SlideMenuControllerSwift
+  - SVProgressHUD (~> 2.1.2)
+  - SwiftyUserDefaults (~> 3.0.0)
+  - Toast (~> 3.1.0)
+  - UIScrollView-InfiniteScroll (~> 1.0.2)
+
+SPEC CHECKSUMS:
+  AFImageHelper: 9142599fb4f826b480d177902ab7f0c961bc966c
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  Crashlytics: dfbae35ef22ca189240d230ad501feea4ee85d2d
+  Fabric: f050464eac45a2ce5a8e6e6a07e977c0df32fe28
+  IHKeyboardAvoiding: d1063551a2bed47cdbeab255e3aa5d7847d7efa8
+  Localize-Swift: 6cabc1087c0e910e77bfa87c2ed3f65c80c0b2df
+  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
+  SlideMenuControllerSwift: 16001e1fd9963fd089fa6c91dbe18d4c148f0ce9
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+  SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
+  Toast: 14a93686d6c8bfe2727afd342414e35660a8a1f3
+  UIScrollView-InfiniteScroll: c132d6d5851daff229ab4a1060ccf70a05a051c9
+
+PODFILE CHECKSUM: 79562f236010d831a146768715d07847109439f8
+
+COCOAPODS: 1.2.1

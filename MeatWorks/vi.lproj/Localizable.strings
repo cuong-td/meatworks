@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  
+
+  Created by fwThanh on 10/18/17.
+  
+*/
+"SIGNIN"                = "ĐĂNG NHẬP";
+"signin"                = "Đăng nhập";
+"username"              = "Tên đăng nhập";
+"password"              = "Mật khẩu";
+"selectCountry"         = "Chọn khu vực:";
+"Ok"                    = "Tiếp tục";
+"Add2Cart"              = "THÊM VÀO GIỎ HÀNG";
+"units"                 = "Đơn vị:";
+"orderUnits"            = "Số lượng đặt:";
+"Cancel"                = "Huỷ";
+"Checkout"              = "THANH TOÁN";
+"Next"                  = "TIẾP TỤC";
+"Buy"                   = "MUA HÀNG";
+"Previous"              = "QUAY LẠI";
+"SubTotal"              = "Tổng từng phần";
+"Total"                 = "Tổng";
+"dDelivery"             = "Chi tiết giao hàng";
+"Fullname"              = "Họ và tên:*";
+"Email"                 = "Thư điện tử:*";
+"Phone"                 = "Điện thoại:*";
+"Address"               = "Địa chỉ:*";
+"District"              = "Quận";
+"alertRequiredFields"   = "Vui lòng nhập các vùng cần thiết(*)";

@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  
+
+  Created by fwThanh on 10/18/17.
+  
+*/
+"SIGNIN"                = "SIGN IN";
+"signin"                = "Sign In";
+"username"              = "User name";
+"password"              = "Password";
+"selectCountry"         = "Select Country:";
+"Ok"                    = "OK";
+"Add2Cart"              = "ADD TO CART";
+"units"                 = "Units:";
+"orderUnits"            = "Order Units:";
+"Cancel"                = "Cancel";
+"Checkout"              = "CHECKOUT";
+"Next"                  = "NEXT";
+"Buy"                   = "BUY";
+"Previous"              = "PREVIOUS";
+"SubTotal"              = "Sub Total";
+"Total"                 = "Total";
+"dDelivery"             = "Delivery Details";
+"Fullname"              = "Full name:*";
+"Email"                 = "Email:*";
+"Phone"                 = "Telephone:*";
+"Address"               = "Address:*";
+"District"              = "District";
+"alertRequiredFields"   = "Please enter all required fields(*)";

@@ -1,0 +1,13 @@
+ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/AFImageHelper" "$PODS_CONFIGURATION_BUILD_DIR/Alamofire" "$PODS_CONFIGURATION_BUILD_DIR/IHKeyboardAvoiding" "$PODS_CONFIGURATION_BUILD_DIR/Localize-Swift" "$PODS_CONFIGURATION_BUILD_DIR/ReachabilitySwift" "$PODS_CONFIGURATION_BUILD_DIR/SVProgressHUD" "$PODS_CONFIGURATION_BUILD_DIR/SlideMenuControllerSwift" "$PODS_CONFIGURATION_BUILD_DIR/SwiftyUserDefaults" "$PODS_CONFIGURATION_BUILD_DIR/Toast" "$PODS_CONFIGURATION_BUILD_DIR/UIScrollView-InfiniteScroll" "${PODS_ROOT}/Crashlytics/iOS" "${PODS_ROOT}/Fabric/iOS"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Crashlytics" "${PODS_ROOT}/Headers/Public/Fabric"
+LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
+OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/AFImageHelper/AFImageHelper.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Alamofire/Alamofire.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/IHKeyboardAvoiding/IHKeyboardAvoiding.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Localize-Swift/Localize_Swift.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/ReachabilitySwift/ReachabilitySwift.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/SVProgressHUD/SVProgressHUD.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/SlideMenuControllerSwift/SlideMenuControllerSwift.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/SwiftyUserDefaults/SwiftyUserDefaults.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Toast/Toast.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/UIScrollView-InfiniteScroll/UIScrollView_InfiniteScroll.framework/Headers" -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/Crashlytics" -isystem "${PODS_ROOT}/Headers/Public/Fabric"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"c++" -l"z" -framework "AFImageHelper" -framework "Alamofire" -framework "Crashlytics" -framework "Fabric" -framework "IHKeyboardAvoiding" -framework "Localize_Swift" -framework "ReachabilitySwift" -framework "SVProgressHUD" -framework "Security" -framework "SlideMenuControllerSwift" -framework "SwiftyUserDefaults" -framework "SystemConfiguration" -framework "Toast" -framework "UIKit" -framework "UIScrollView_InfiniteScroll"
+OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
+PODS_BUILD_DIR = $BUILD_DIR
+PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
+PODS_ROOT = ${SRCROOT}/Pods
+SWIFT_VERSION = 3.0
