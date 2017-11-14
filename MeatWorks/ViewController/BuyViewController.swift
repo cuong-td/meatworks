@@ -24,6 +24,8 @@ class BuyViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Checkout".localized()
+        
         lb1.layer.cornerRadius = 20.0
         lb2.layer.borderWidth = 5.0
         lb2.layer.borderColor = UIColor(hexString: "#4E549D").cgColor

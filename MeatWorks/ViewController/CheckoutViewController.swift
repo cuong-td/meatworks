@@ -16,6 +16,7 @@ class CheckoutViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Checkout".localized()
         // Do any additional setup after loading the view.
         btnCheckout.layer.cornerRadius = 5.0
         self.cTableView.tableFooterView = UIView()

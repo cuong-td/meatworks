@@ -13,9 +13,8 @@ class ContactViewController: UIViewController, MFMailComposeViewControllerDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-        
+        self.title = "ContactUs".localized()
     }
 
     @IBAction func openMenu(_ sender: AnyObject) {

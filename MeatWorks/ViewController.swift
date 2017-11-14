@@ -15,13 +15,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet var collectionHeader: UICollectionView!
     @IBOutlet var mTableView: UITableView!
     @IBOutlet var btnOrder: UIButton!
-
+    @IBOutlet weak var lbHeader: UILabel!
+    
     let reuseIdentifier = "headerCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
+        self.lbHeader.text = "NEWPRODUCT".localized()
         //SVProgressHUD.setDefaultMaskType(.clear)
         MService.shared.getNewProducts { (listFoods) in
             if listFoods != nil {
@@ -36,6 +37,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             })
         }
         
+        self.title = "Product".localized()
     }
 
     override func viewDidAppear(_ animated: Bool) {

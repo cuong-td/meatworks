@@ -11,17 +11,39 @@ import UIKit
 class AboutViewController: UIViewController {
 
     @IBOutlet weak var imgGallery: UIImageView!
+    @IBOutlet weak var lbTitle: UILabel!
+    @IBOutlet weak var lbAllOur: UILabel!
+    @IBOutlet weak var lbAbout1: UILabel!
+    @IBOutlet weak var lbQuality: UILabel!
+    @IBOutlet weak var lbAbout2: UILabel!
+    @IBOutlet weak var lbAboutUs: UILabel!
+    @IBOutlet weak var lbAbout3: UILabel!
+    @IBOutlet weak var lbGalerry: UILabel!
     
     var photosGallery = [#imageLiteral(resourceName: "img1"), #imageLiteral(resourceName: "img2"), #imageLiteral(resourceName: "img3")]
     var currentIndex = 0
-    var timer : Timer = Timer()
+    //var timer : Timer = Timer()
     
+//    deinit {
+//        timer.invalidate()
+//    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
         imgGallery.image = photosGallery[currentIndex]
-        timer.invalidate()
-        timer = Timer.scheduledTimer(timeInterval: 10.0, target: self, selector: #selector(self.changePhotoGallery), userInfo: nil, repeats: true)
+        //timer.invalidate()
+        //timer = Timer.scheduledTimer(timeInterval: 10.0, target: self, selector: #selector(self.changePhotoGallery), userInfo: nil, repeats: true)
+        
+        self.lbTitle.text = "WHYSHOPHERE".localized()
+        self.lbAllOur.text = "ALLOUR".localized()
+        self.lbAbout1.text = "About1".localized()
+        self.lbQuality.text = "FINESTQUALITY".localized()
+        self.lbAbout2.text = "About2".localized()
+        self.lbAboutUs.text = "ABOUTM".localized()
+        self.lbAbout3.text = "About3".localized()
+        self.lbGalerry.text = "GALLERRY".localized()
+
+        self.title = "About".localized()
     }
 
     @IBAction func openMenu(_ sender: AnyObject) {

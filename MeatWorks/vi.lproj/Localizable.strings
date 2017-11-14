@@ -5,6 +5,15 @@
   Created by fwThanh on 10/18/17.
   
 */
+////Navigation////
+"Product"               = "SẢN PHẨM";
+"Add"                   = "THÊM";
+"Cart"                  = "GIỎ HÀNG";
+"Delivery"              = "GIAO HÀNG";
+"About"                 = "GIỚI THIỆU";
+"ContactUs"             = "LIÊN HỆ";
+
+"NEWPRODUCT"            = "SẢN PHẨM MỚI";
 "SIGNIN"                = "ĐĂNG NHẬP";
 "signin"                = "Đăng nhập";
 "username"              = "Tên đăng nhập";
@@ -28,3 +37,15 @@
 "Address"               = "Địa chỉ:*";
 "District"              = "Quận";
 "alertRequiredFields"   = "Vui lòng nhập các vùng cần thiết(*)";
+////About////
+"WHYSHOPHERE"           = "VÌ SAO NÊN CHỌN MEATWORKS";
+"ALLOUR"                = "TẤT CẢ CÁC SẢN PHẨM CỦA CHÚNG TÔI ĐỀU ĐƯỢC CHĂN THẢ TỰ DO";
+"About1"                = "Sản phẩm “Free Range” là sản phẩm được sản xuất từ bò và cừu phần lớn được chăn thả tự do theo một chế độ ăn uống tự nhiên. Chế độ chăn nuôi này sẽ đảm bảo các sản phẩm thịt Free Range có một hương vị tuyệt vời.";
+"FINESTQUALITY"         = "CUNG CẤP CÁC SẢN PHẨM NÔNG SẢN ĐẠT TIÊU CHUẨN QUỐC TẾ";
+"About2"                = "Sản phẩm thịt cừu được nuôi bằng cỏ thiên nhiên tại các trang trại nằm ở vùng ngoại ô của bang Victoria. Mô hình chăn nuôi mang tính trách nhiệm và thân thiện với môi trường này đảm bảo cung cấp các sản phẩm thịt cừu tự nhiên với chất lượng ổn định. Kết quả của phương thức chăn nuôi này làm miếng thịt cừu mềm và mọng nước.";
+"ABOUTM"                = "VỀ CHÚNG TÔI";
+"About3"                = "Công ty TNHH Meatwork nằm tại trung tâm Quận 2 và Quận 7, Tp Hồ Chí Minh, chuyên phục vụ các loại thịt bò, thịt cừu nhập khẩu chất lượng cao và các loại thịt nội địa như thịt heo và thịt gà. Meatworks do chính người Úc sở hữu và quản lý với trên 20 năm kinh nghiệm trong lĩnh vực thực phẩm và nước giải khát tại Việt Nam mang đến những sản phẩm thịt cao cấp từ Úc, bán sỉ và bán lẻ cho thị trường Việt Nam. Cả khách hàng địa phương và nước ngoài đều yêu thích các sản phẩm thịt bò và thịt cừu chất lượng cao được nhập từ Úc cũng như các loại thịt heo và thịt gà địa phương. \nThấu hiểu tâm lí người tiêu dùng yêu chuộng thịt bò và cừu nhập khẩu ướp lạnh hơn đông lạnh, chúng tôi đã hợp tác với công ty thực phẩm Woodward Úc để đáp ứng nhu cầu này. Chúng tôi đang hợp tác với công ty thực phẩm Woodward Úc thông qua InterAgri, thuộc thung lũng Murray, tiểu bang Victoria, Úc. Một trong những công ty được đánh giá cao nhất tại Úc với 5 thế hệ làm việc tại đây để tìm ra cách sản xuất thịt bò và cừu tốt nhất. \nVì vậy, bạn hãy yên tâm vì thịt bò và cừu nhập khẩu tại Meatworks là loại thịt ướp lạnh, tươi ngon và có chất lượng hảo hạng nhất. Điều này chắc chắn sẽ khiến các khách sạn và nhà hàng của bạn trở thành tâm điểm.";
+"GALLERRY"              = "THƯ VIỆN ẢNH";
+
+
+

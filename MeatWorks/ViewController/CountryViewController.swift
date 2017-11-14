@@ -8,6 +8,7 @@
 
 import UIKit
 import Localize_Swift
+import SVProgressHUD
 
 class CountryViewController: UIViewController, UIPopoverPresentationControllerDelegate {
 
@@ -20,6 +21,7 @@ class CountryViewController: UIViewController, UIPopoverPresentationControllerDe
     
     let availableLanguages = Localize.availableLanguages()
     var currentSelect: Country?
+    var listPOS: [Country]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,36 +33,48 @@ class CountryViewController: UIViewController, UIPopoverPresentationControllerDe
         btnSelect.layer.borderColor = UIColor.black.cgColor
         btnSelect.layer.borderWidth = 2.0
         
-        self.currentSelect = Country(id: "2c52c22c-4756-472d-9059-fd256d6075a8", district: "\("District".localized()) 2")
-        self.btnSelect.setTitle(self.currentSelect?.district, for: .normal)
-        SData.shared.current_posId = self.currentSelect?.id
+        SVProgressHUD.setDefaultMaskType(.clear)
+        SVProgressHUD.show()
+        MService.shared.getPOS() { (listPos) in
+            if listPos != nil {
+                self.listPOS = listPos
+                self.currentSelect = self.listPOS?[0]
+                self.btnSelect.setTitle(self.currentSelect?.pos_name, for: .normal)
+                SData.shared.current_posId = self.currentSelect?.pos_id
+            }
+            SVProgressHUD.dismiss()
+        }
+        
         self.changeText()
     }
 
     func changeText() {
         self.lbSelection.text = "selectCountry".localized()
         btnOK.setTitle("Ok".localized(), for: .normal)
+        self.btnSelect.setTitle(self.currentSelect?.pos_name, for: .normal)
     }
     
     @IBAction func selectAction(_ sender: AnyObject) {
-        let popoverContent = self.storyboard?.instantiateViewController(withIdentifier: "CountriesId") as! ListCountriesVC
-        popoverContent.listItems = [Country(id: "2c52c22c-4756-472d-9059-fd256d6075a8", district: "\("District".localized()) 2"), Country(id: "102271e1-b11c-4dcd-ae96-36ef073fcdcf", district: "\("District".localized()) 9")]
-        
-        popoverContent.modalPresentationStyle = UIModalPresentationStyle.popover
-        let popover = popoverContent.popoverPresentationController
-        popoverContent.preferredContentSize = CGSize(width: 280, height: (popoverContent.listItems.count < 6 ? 45 * popoverContent.listItems.count : 300))
-        popover?.delegate = self
-        popover?.sourceView = self.imgSelect
-        popover?.sourceRect = sender.bounds
-        
-        popoverContent.selectedCountry = {(_ country: Country) -> Void in
-            self.btnSelect.setTitle(country.district, for: .normal)
-            SData.shared.current_posId = country.id
-            self.currentSelect = country
-            popoverContent.dismiss(animated: true, completion: nil)
+        if self.listPOS != nil {
+            let popoverContent = self.storyboard?.instantiateViewController(withIdentifier: "CountriesId") as! ListCountriesVC
+            popoverContent.listItems = self.listPOS!
+            
+            popoverContent.modalPresentationStyle = UIModalPresentationStyle.popover
+            let popover = popoverContent.popoverPresentationController
+            popoverContent.preferredContentSize = CGSize(width: 280, height: (popoverContent.listItems.count < 6 ? 45 * popoverContent.listItems.count : 300))
+            popover?.delegate = self
+            popover?.sourceView = self.imgSelect
+            popover?.sourceRect = sender.bounds
+            
+            popoverContent.selectedCountry = {(_ country: Country) -> Void in
+                self.btnSelect.setTitle(country.pos_name, for: .normal)
+                SData.shared.current_posId = country.pos_id
+                self.currentSelect = country
+                popoverContent.dismiss(animated: true, completion: nil)
+            }
+            
+            self.present(popoverContent, animated: true, completion: nil)
         }
-        
-        self.present(popoverContent, animated: true, completion: nil)
     }
     
     @IBAction func VNAction(_ sender: AnyObject) {

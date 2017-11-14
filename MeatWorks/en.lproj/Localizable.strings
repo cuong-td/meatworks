@@ -5,6 +5,16 @@
   Created by fwThanh on 10/18/17.
   
 */
+////Navigation////
+"Product"               = "PRODUCT";
+"Add"                   = "ADD";
+"Cart"                  = "CART";
+"Delivery"              = "DELIVERY";
+"Checkout"              = "CHECKOUT";
+"About"                 = "ABOUT";
+"ContactUs"             = "CONTACT US";
+
+"NEWPRODUCT"            = "NEW PRODUCT";
 "SIGNIN"                = "SIGN IN";
 "signin"                = "Sign In";
 "username"              = "User name";
@@ -28,3 +38,14 @@
 "Address"               = "Address:*";
 "District"              = "District";
 "alertRequiredFields"   = "Please enter all required fields(*)";
+////About////
+"WHYSHOPHERE"           = "WHY SHOP HERE";
+"ALLOUR"                = "ALL OUR PRODUCE IS FREE RANGE";
+"About1"                = "“Free Range” product/ farming means the cattle and lamb roam freely outdoors for majority of the day and as such enjoy a more natural diet. Free range farming of cattle and lamb is a more humane and better way to ensure great tasting beef and lamb";
+"FINESTQUALITY"         = "FINEST QUALITY INTERNATIONAL PRODUCE";
+"About2"                = "Our grass fed lamb also comes from farms across the rural regions in Victoria. Responsible and environmentally sensitive farming ensures customers receive a consistent quality, natural lamb product. The result is a tasty juicy tender experience.";
+"ABOUTM"                = "ABOUT US";
+"About3"                = "A premium butchery situated in the heart of District 2& District 7, Ho Chi Minh City dedicated to serving the finest imported beef and lamb, and locally sourced poultry and pork. Drawing upon 20 years of experience in the food and beverage industry in Vietnam.Meatworks, proudly Australian owned and managed, bringing premium Australian meats, retail and wholesale, to the Vietnam marketplace. Both the local and expat community have embraced our consistently high quality beef and lamb product from Australia. As well as our premium, locally sourced pork and chicken. \nWe know you prefer your beef and lamb to be imported chilled rather than frozen. With our relationship with Woodward Foods Australia we now can offer that capability. With much pleasure we announce that, via InterAgri, we are teaming up with WOODWARD FOODS AUSTRALIA, situated in the Murray Valley region of Victoria, and one of Australia’s most highly respected growers who for five generations have been dedicated to the perfection of their beef and lamb produce. \nSo, we can guarantee the beef and lamb we get to you will be fresh, chilled, and of the highest premium quality, to make your meal, hotel or restaurant the talk of the town.";
+"GALLERRY"              = "GALLERY";
+
+

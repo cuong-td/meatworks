@@ -51,7 +51,7 @@ class ListCountriesVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as UITableViewCell
         cell.textLabel?.numberOfLines = 0
         if listItems.count > 0 {
-            cell.textLabel?.text = listItems[indexPath.row].district
+            cell.textLabel?.text = listItems[indexPath.row].pos_name
         }
         else if listUnits.count > 0 {
             cell.textLabel?.text = listUnits[indexPath.row].unit_name

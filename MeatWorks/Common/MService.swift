@@ -20,6 +20,7 @@ let sqlGetListProduct = "SELECT  d2.product_name, lg.contents AS product_name_lg
 let sqlGetCartItem = "SELECT d2.product_code, d2.product_name, d1.input_quantity, d1.quantity , d1.unit_price , d1.currency_id, d1.sale_detail_id, d2.photo, d1.product_id, d4.unit_name FROM bzb_product_sale_detail_local d1 LEFT OUTER JOIN bzb_product d2 ON(d1.product_id = d2.product_id) LEFT OUTER JOIN bzb_product_sale_local d3 ON(d1.sale_id = d3.sale_id) LEFT OUTER JOIN bzb_product_unit d4 ON(d1.input_unit_id = d4.unit_id) LEFT OUTER JOIN bzb_page lg ON(d2.product_id = lg.page_for_id AND lg.column_name='product_name' AND lg.lg='vn') WHERE d3.sale_id ='%@' AND d1.status =0 AND d3.status =0 ORDER BY d1.record_add DESC"
 
 let sqlGetGroupUnit = ""
+let sqlGetListPos = "select pos_id, pos_code, pos_name, tel, logo from bzb_pos where parent_id='ROOT' and order_online='1' and status='0' and inactive='0'"
 
 class MService {
     
@@ -40,6 +41,39 @@ class MService {
             }
             
             completion(data, nil)
+        }
+    }
+    
+    func getPOS(completion: @escaping (_ datas: [Country]?) -> ()) {
+        
+        let sqlBase64 = sqlGetListPos.getBase64()
+        let path = baseURL.appending(sqlBase64)
+        
+        guard let url = URL(string: path) else {return}
+        
+        var datas: [Country] = []
+        
+        request(url: url, method: .get, params: nil) { (response, error) in
+            
+            if let jsonArr = response?.components(separatedBy: "\n") {
+                
+                var keys: [String] = []
+                
+                for (index, value) in jsonArr.enumerated() {
+                    
+                    //Key array
+                    if index == 0 {
+                        keys = value.components(separatedBy: "\t")
+                    } else {
+                        
+                        let data = Country.init(keys: keys, values: value.components(separatedBy: "\t"))
+                        datas.append(data)
+                        
+                    }
+                }
+                
+                completion(datas)
+            }
         }
     }
     

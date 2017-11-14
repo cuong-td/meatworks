@@ -10,12 +10,12 @@ import UIKit
 import IHKeyboardAvoiding
 import SVProgressHUD
 
-class AddCartViewController: UIViewController, UIPopoverPresentationControllerDelegate {
+class AddCartViewController: UIViewController, UIPopoverPresentationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet var txtRemark: UITextView!
     @IBOutlet var btnAdd: UIButton!
     @IBOutlet var avoidingView: UIView!
-    @IBOutlet var lbValue: UILabel!
+    @IBOutlet var tfValue: UITextField!
     @IBOutlet var lbUnits: UILabel!
     @IBOutlet var btnUnits: UIButton!
     @IBOutlet var lbProduct: UILabel!
@@ -32,6 +32,7 @@ class AddCartViewController: UIViewController, UIPopoverPresentationControllerDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Cart".localized()
         // Do any additional setup after loading the view.
         txtRemark.layer.borderWidth = 1.0
         txtRemark.layer.cornerRadius = 5.0
@@ -57,10 +58,10 @@ class AddCartViewController: UIViewController, UIPopoverPresentationControllerDe
                 self.btnUnits.setTitle(self.currentUnit?.unit_name, for: .normal)
                 
                 if self.currentUnit.factor == "1" {
-                    self.lbValue.text = "1"
+                    self.tfValue.text = "1"
                 }
                 else {
-                    self.lbValue.text = "100"
+                    self.tfValue.text = "100"
                 }
             }
             SVProgressHUD.dismiss()
@@ -114,13 +115,17 @@ class AddCartViewController: UIViewController, UIPopoverPresentationControllerDe
     }
     
     @IBAction func stepperValueChanged(_ stepper: UIStepper) {
+        if tfValue.isEditing {
+            self.view.endEditing(true)
+            return
+        }
         self.view.endEditing(true)
         let value = Int(stepper.value)
         if self.currentUnit.factor == "1" {
-            self.lbValue.text = "\(value)"
+            self.tfValue.text = "\(value)"
         }
         else {
-            self.lbValue.text = "\(value*100)"
+            self.tfValue.text = "\(value*100)"
         }
     }
     
@@ -139,10 +144,10 @@ class AddCartViewController: UIViewController, UIPopoverPresentationControllerDe
             self.btnUnits.setTitle(unit.unit_name, for: .normal)
             self.currentUnit = unit
             if self.currentUnit.factor == "1" {
-                self.lbValue.text = "1"
+                self.tfValue.text = "1"
             }
             else {
-                self.lbValue.text = "100"
+                self.tfValue.text = "100"
             }
             self.stepper.value = 1
             popoverContent.dismiss(animated: true, completion: nil)
@@ -154,7 +159,7 @@ class AddCartViewController: UIViewController, UIPopoverPresentationControllerDe
         self.view.endEditing(true)
         SVProgressHUD.show()
         
-        let unitBuy: Double = Double(self.lbValue.text!)!
+        let unitBuy: Double = Double(self.tfValue.text!)!
         let productId = (self.product?.product_id ?? "")!
         let quantity = "\(self.currentUnit.factor == "1" ? unitBuy : unitBuy / 1000)"
         let unit_price = (self.product?.unit_price ?? "")!
@@ -198,6 +203,15 @@ class AddCartViewController: UIViewController, UIPopoverPresentationControllerDe
                 self.navigationController!.popToViewController(controller, animated: true)
                 break
             }
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if self.currentUnit.factor == "1" {
+            self.stepper.value = Double(textField.text! == "" ? "0" : textField.text!)!
+        }
+        else {
+            self.stepper.value = (Double(textField.text! == "" ? "0" : textField.text!)!) / 100
         }
     }
     

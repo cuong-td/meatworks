@@ -30,6 +30,7 @@ class DeliveryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Delivery".localized()
         // Do any additional setup after loading the view.
         lb1.layer.cornerRadius = 20.0
         lb1.layer.borderWidth = 5.0
