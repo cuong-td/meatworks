@@ -77,7 +77,8 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailCollectionCellId", for: indexPath as IndexPath) as! DetailCollectionCell
             cell.layer.cornerRadius = 5.0
             let value = SData.shared.listProducts[indexPath.row]
-            cell.lbPrice.text = (value.unit_price ?? "") + (value.currency_id ?? "") + "/" + (value.unit_name ?? "")
+//            cell.lbPrice.text = (value.unit_price ?? "") + (value.currency_id ?? "") + "/" + (value.unit_name ?? "")
+            cell.lbPrice.text = "\(value.unit_price ?? "")\(value.currency_id ?? "")/\(value.unit_name ?? "")"
             let urlImg = "http://online.meatworksasia.com/photo.aspx?id=\(value.photo ?? "")".replacingOccurrences(of: " ", with: "%20")
             cell.imgView.image = UIImage.image(fromURL: urlImg, placeholder: UIImage(named: "Header")!, shouldCacheImage: true) { (image) in
                 //cell.imgView.image = image

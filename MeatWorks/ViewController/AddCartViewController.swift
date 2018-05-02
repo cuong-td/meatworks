@@ -42,7 +42,8 @@ class AddCartViewController: UIViewController, UIPopoverPresentationControllerDe
         KeyboardAvoiding.avoidingView = self.avoidingView
         
         self.lbProduct.text = self.product?.product_name
-        self.lbPrice.text = (self.product?.unit_price ?? "") + (self.product?.currency_id ?? "") + "/" + (self.product?.unit_name ?? "")
+//        self.lbPrice.text = (self.product?.unit_price ?? "") + (self.product?.currency_id ?? "") + "/" + (self.product?.unit_name ?? "")
+        self.lbPrice.text = "\(self.product?.unit_price ?? "")\(self.product?.currency_id ?? "")/\(self.product?.unit_name ?? "")"
         let urlImg = "http://online.meatworksasia.com/photo.aspx?id=\(self.product?.photo ?? "")".replacingOccurrences(of: " ", with: "%20")
         self.imgView.image = UIImage.image(fromURL: urlImg, placeholder: UIImage(named: "Header")!, shouldCacheImage: true) { (image) in
             //self.imgView.image = image

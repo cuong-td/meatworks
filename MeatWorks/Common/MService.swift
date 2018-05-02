@@ -13,7 +13,8 @@ let apiURL = "http://online.meatworksasia.com/shopaction.aspx"
 
 let sqlGetNewProducts = "SELECT d2.parent_id, d2.unit_price, d2.product_id, d2.product_name, d2.photo, d2.currency_id, d3.unit_name, d3.unit_id from bzb_product d2 left outer join bzb_product_unit d3 on d2.unit_id=d3.unit_id where is_favorite =1 and is_category=0 AND is_product=1 and d2.status=0 and onsale=1 and d2.inactive=0 and d2.pos_id='ROOT'"
 
-let sqlGetCategories = "select id as type_id, name as type_name, product_id, product_name, photo from bzb_product d1 right outer join (select product_id as id, product_name as name from bzb_product where parent_id ='' and status =0 and onsale =1) d2 on (d1.parent_id=d2.id) where status =0 and onsale =1 order by d2.id, order_by"
+let beverageType = "b4969322-4d8b-4238-81cb-1447b8bd3cd2"
+let sqlGetCategories = "select id as type_id, name as type_name, product_id, product_name, photo from bzb_product d1 right outer join (select product_id as id, product_name as name from bzb_product where parent_id ='' and status =0 and onsale =1) d2 on (d1.parent_id=d2.id) where id != '%@' and status =0 and onsale =1 order by d2.id, order_by".format(parameters: beverageType)
 
 let sqlGetListProduct = "SELECT  d2.product_name, lg.contents AS product_name_lg, d2.product_code , bzb_product_assign.unit_price, bzb_product_assign.product_id, d2.photo, bzb_product_assign.currency_id, d3.unit_name, d3.unit_id, d3.parent_id FROM bzb_product_assign LEFT OUTER JOIN bzb_product d2 ON(bzb_product_assign.product_id = d2.product_id) LEFT OUTER JOIN bzb_product_unit d3 ON(d2.unit_id = d3.unit_id) LEFT OUTER JOIN bzb_page lg ON(d2.product_id = lg.page_for_id AND lg.column_name='product_name' AND lg.lg='en') WHERE d2.is_category=0 AND d2.is_product=1 AND bzb_product_assign.pos_id ='ROOT' AND bzb_product_assign.status =0 AND bzb_product_assign.onsale = 1 AND bzb_product_assign.inactive =0 AND d2.parent_id="
 
