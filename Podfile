@@ -19,3 +19,6 @@ target 'MeatWorks' do
     pod 'Fabric'
     pod 'Crashlytics'
 end
+
+target 'TRG' do
+end

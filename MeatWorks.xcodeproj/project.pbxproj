@@ -12,6 +12,7 @@
 		619ECDFB1F8242AD0043524B /* FoodViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619ECDFA1F8242AD0043524B /* FoodViewCell.swift */; };
 		619ECDFD1F8245AB0043524B /* BeverageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619ECDFC1F8245AB0043524B /* BeverageViewCell.swift */; };
 		800DC3D1A90194E666402175 /* Pods_MeatWorks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4412FF8E96F3920966D9CEC5 /* Pods_MeatWorks.framework */; };
+		B16C77C220A29F4700041715 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B16C77C120A29F4600041715 /* Assets.xcassets */; };
 		B1E69699209AC79200B6FD1B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3609B4B1F97BA8600D64D56 /* RegisterViewController.swift */; };
 		B1E6969A209AC79200B6FD1B /* Meatworks.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3558FCB1F9A554B00E31CE4 /* Meatworks.swift */; };
 		B1E6969B209AC79200B6FD1B /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35F55BC1F8876E10097A3C5 /* Food.swift */; };
@@ -49,7 +50,6 @@
 		B1E696BC209AC79200B6FD1B /* Pods_MeatWorks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4412FF8E96F3920966D9CEC5 /* Pods_MeatWorks.framework */; };
 		B1E696BE209AC79200B6FD1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3C019E91F7FEF190042B832 /* LaunchScreen.storyboard */; };
 		B1E696BF209AC79200B6FD1B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3609B471F97A03300D64D56 /* Localizable.strings */; };
-		B1E696C0209AC79200B6FD1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3C019E71F7FEF190042B832 /* Assets.xcassets */; };
 		B1E696C1209AC79200B6FD1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3C019E41F7FEF190042B832 /* Main.storyboard */; };
 		D31590F91F9F787000A77972 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31590F81F9F787000A77972 /* Cart.swift */; };
 		D31590FE1F9FA83000A77972 /* Delivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31590FD1F9FA83000A77972 /* Delivery.swift */; };
@@ -93,6 +93,7 @@
 		619ECDF81F8227060043524B /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		619ECDFA1F8242AD0043524B /* FoodViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewCell.swift; sourceTree = "<group>"; };
 		619ECDFC1F8245AB0043524B /* BeverageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeverageViewCell.swift; sourceTree = "<group>"; };
+		B16C77C120A29F4600041715 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1E696C8209AC79200B6FD1B /* TRG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TRG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1E696C9209AC79200B6FD1B /* trg.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = trg.plist; path = /Cuong/Works/XCode/MeatWorksRelease/trg.plist; sourceTree = "<absolute>"; };
 		B39E9879755687D31F2B0DB5 /* Pods-MeatWorks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeatWorks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeatWorks/Pods-MeatWorks.debug.xcconfig"; sourceTree = "<group>"; };
@@ -173,6 +174,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B16C77C020A29B4100041715 /* TRG */ = {
+			isa = PBXGroup;
+			children = (
+				B16C77C120A29F4600041715 /* Assets.xcassets */,
+			);
+			path = TRG;
+			sourceTree = "<group>";
+		};
 		D335F1791F80E96600E10127 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +244,7 @@
 		D3C019D41F7FEF190042B832 = {
 			isa = PBXGroup;
 			children = (
+				B16C77C020A29B4100041715 /* TRG */,
 				D3C019DF1F7FEF190042B832 /* MeatWorks */,
 				D3C019DE1F7FEF190042B832 /* Products */,
 				AB0E49676254A103988434D8 /* Pods */,
@@ -361,8 +371,8 @@
 			files = (
 				B1E696BE209AC79200B6FD1B /* LaunchScreen.storyboard in Resources */,
 				B1E696BF209AC79200B6FD1B /* Localizable.strings in Resources */,
-				B1E696C0209AC79200B6FD1B /* Assets.xcassets in Resources */,
 				B1E696C1209AC79200B6FD1B /* Main.storyboard in Resources */,
+				B16C77C220A29F4700041715 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,7 +636,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -644,7 +654,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -773,7 +783,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -791,7 +801,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

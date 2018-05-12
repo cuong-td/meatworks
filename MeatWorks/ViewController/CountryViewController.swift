@@ -36,7 +36,7 @@ class CountryViewController: UIViewController, UIPopoverPresentationControllerDe
         SVProgressHUD.setDefaultMaskType(.clear)
         SVProgressHUD.show()
         MService.shared.getPOS() { (listPos) in
-            if listPos != nil {
+            if listPos != nil && listPos!.count > 0 {
                 self.listPOS = listPos
                 self.currentSelect = self.listPOS?[0]
                 self.btnSelect.setTitle(self.currentSelect?.pos_name, for: .normal)
