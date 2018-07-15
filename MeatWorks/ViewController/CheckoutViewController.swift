@@ -65,8 +65,7 @@ class CheckoutViewController: UIViewController, UITableViewDelegate, UITableView
         cell.lbName.text = value.product_name
         cell.lbUnit.text = "x\(value.input_quantity ?? "")(\(value.unit_name ?? ""))"
         
-        let dValue: Double = Double(value.unit_price ?? "0")!
-        cell.lbPrice.text = dValue.formatAsCurrency(currencyCode: value.currency_id ?? "VND")
+        cell.lbPrice.text = "\(value.unit_price?.numFormat() ?? "")\(value.currency_id ?? "VND")"
         
         cell.btnDelete.tag = indexPath.row
         cell.btnDelete.addTarget(self, action:#selector(self.deleteItem), for: .touchUpInside)
@@ -98,18 +97,5 @@ class CheckoutViewController: UIViewController, UITableViewDelegate, UITableView
         if segue.identifier == "Delivery" {
             let _:DeliveryViewController = segue.destination as! DeliveryViewController
         }
-    }
-}
-
-extension Double {
-    func formatAsCurrency(currencyCode: String) -> String? {
-        let currencyFormatter = NumberFormatter()
-        currencyFormatter.numberStyle = NumberFormatter.Style.currency
-        currencyFormatter.currencyCode = currencyCode
-        currencyFormatter.locale = (currencyCode == "VND" ? Locale(identifier: "vi") : Locale(identifier: "en"))
-        currencyFormatter.maximumFractionDigits = floor(self) == self ? 0 : 2
-        let locale = NSLocale(localeIdentifier: currencyCode)
-        let currencySymbol = locale.displayName(forKey: .currencySymbol, value: currencyCode) ?? currencyCode
-        return currencyFormatter.string(from: NSNumber(value: self))?.replacingOccurrences(of: currencySymbol, with: "").replacingOccurrences(of: " ", with: "")
     }
 }

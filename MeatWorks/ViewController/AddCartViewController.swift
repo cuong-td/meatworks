@@ -43,7 +43,7 @@ class AddCartViewController: UIViewController, UIPopoverPresentationControllerDe
         
         self.lbProduct.text = self.product?.product_name
 //        self.lbPrice.text = (self.product?.unit_price ?? "") + (self.product?.currency_id ?? "") + "/" + (self.product?.unit_name ?? "")
-        self.lbPrice.text = "\(self.product?.unit_price ?? "")\(self.product?.currency_id ?? "")/\(self.product?.unit_name ?? "")"
+        self.lbPrice.text = "\(self.product?.unit_price?.numFormat() ?? "")\(self.product?.currency_id ?? "")/\(self.product?.unit_name ?? "")"
         let urlImg = "http://online.meatworksasia.com/photo.aspx?id=\(self.product?.photo ?? "")".replacingOccurrences(of: " ", with: "%20")
         self.imgView.image = UIImage.image(fromURL: urlImg, placeholder: UIImage(named: "Header")!, shouldCacheImage: true) { (image) in
             //self.imgView.image = image
@@ -163,7 +163,7 @@ class AddCartViewController: UIViewController, UIPopoverPresentationControllerDe
         let unitBuy: Double = Double(self.tfValue.text!)!
         let productId = (self.product?.product_id ?? "")!
         let quantity = "\(self.currentUnit.factor == "1" ? unitBuy : unitBuy / 1000)"
-        let unit_price = (self.product?.unit_price ?? "")!
+        let unit_price = (self.product?.unit_price?.numFormat() ?? "")!
         let unit_id = (self.product?.unit_id ?? "")!
         let description = self.txtRemark.text!
         let pos_Id = SData.shared.current_posId!

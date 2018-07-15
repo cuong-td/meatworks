@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A93864220F9FC2300C61CB3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A93864120F9FC2300C61CB3 /* Extensions.swift */; };
 		610BA7A21F822038009B49B3 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610BA7A11F822038009B49B3 /* AboutViewController.swift */; };
 		619ECDF91F8227060043524B /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619ECDF81F8227060043524B /* ContactViewController.swift */; };
 		619ECDFB1F8242AD0043524B /* FoodViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619ECDFA1F8242AD0043524B /* FoodViewCell.swift */; };
@@ -88,6 +89,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A93864120F9FC2300C61CB3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4412FF8E96F3920966D9CEC5 /* Pods_MeatWorks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeatWorks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		610BA7A11F822038009B49B3 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		619ECDF81F8227060043524B /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				D3558FCB1F9A554B00E31CE4 /* Meatworks.swift */,
 				D35F55C31F887FC70097A3C5 /* SData.swift */,
 				D35F55BF1F8877020097A3C5 /* MService.swift */,
+				0A93864120F9FC2300C61CB3 /* Extensions.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -574,6 +577,7 @@
 				D35F55C41F887FC70097A3C5 /* SData.swift in Sources */,
 				D3F03C901F89427000250205 /* AddCartViewController.swift in Sources */,
 				D31590FE1F9FA83000A77972 /* Delivery.swift in Sources */,
+				0A93864220F9FC2300C61CB3 /* Extensions.swift in Sources */,
 				610BA7A21F822038009B49B3 /* AboutViewController.swift in Sources */,
 				D3FCDCBD1F8A5050009260A6 /* Category.swift in Sources */,
 				619ECDFD1F8245AB0043524B /* BeverageViewCell.swift in Sources */,

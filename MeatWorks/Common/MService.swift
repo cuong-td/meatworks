@@ -287,15 +287,3 @@ class MService {
     }
     
 }
-
-extension String {
-    func getBase64() -> String {
-        if let data = self.data(using: String.Encoding.utf8) {
-            return data.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
-        }
-        return ""
-    }
-    func format(parameters: CVarArg...) -> String {
-        return String(format: self, arguments: parameters)
-    }
-}

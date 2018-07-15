@@ -100,8 +100,8 @@ class BuyViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         cell.lbName.text = value.product_name
         cell.lbUnit.text = "x\(value.input_quantity ?? "")(\(value.unit_name ?? ""))"
         
-        let dValue: Double = Double(value.unit_price ?? "0")!
-        cell.lbPrice.text = dValue.formatAsCurrency(currencyCode: value.currency_id ?? "VND")
+//        let dValue: Double = Double(value.unit_price ?? "0")!
+//        cell.lbPrice.text = dValue.formatAsCurrency(currencyCode: value.currency_id ?? "VND")
         
         let unit: Double    = Double(value.input_quantity!)!
         let price: Double   = Double(value.unit_price!)!
