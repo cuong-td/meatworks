@@ -116,7 +116,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     // create a cell for each table view row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:TableCollectViewCell = tableView.dequeueReusableCell(withIdentifier: "TableCollectViewCellId") as! TableCollectViewCell!
+        let cell:TableCollectViewCell = tableView.dequeueReusableCell(withIdentifier: "TableCollectViewCellId") as! TableCollectViewCell?
         cell.delegate = self
         
         let sectionName = Array(SData.shared.listCategories.keys)[indexPath.row]

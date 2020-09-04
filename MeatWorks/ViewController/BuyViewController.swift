@@ -89,7 +89,7 @@ class BuyViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     // create a cell for each table view row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:BuyTbViewCell = tableView.dequeueReusableCell(withIdentifier: "BuyTbViewCellId") as! BuyTbViewCell!
+        let cell:BuyTbViewCell = tableView.dequeueReusableCell(withIdentifier: "BuyTbViewCellId") as! BuyTbViewCell?
         let value: Cart = SData.shared.listCartItems![indexPath.row] as Cart
         let urlImg = "http://online.meatworksasia.com/photo.aspx?id=\(value.photo ?? "")".replacingOccurrences(of: " ", with: "%20")
         cell.imgView.image = UIImage.image(fromURL: urlImg, placeholder: UIImage(named: "Header")!, shouldCacheImage: true) { (image) in
