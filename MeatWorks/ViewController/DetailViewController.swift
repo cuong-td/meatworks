@@ -42,7 +42,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == collectionHeader {
             let itemFilter = (self.listCategoryFilter?[indexPath.row].product_name ?? "")
-            let size: CGSize = itemFilter.size(attributes: [NSFontAttributeName: UIFont(name: "HelveticaNeue-Medium", size: 20.0) as Any])
+            let size: CGSize = itemFilter.size(withAttributes: convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "HelveticaNeue-Medium", size: 20.0) as Any]))
             return CGSize(width: size.width + 10.0, height: 40)
         }
         else {
@@ -122,4 +122,15 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
     }
 
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [String: Any]?) -> [NSAttributedString.Key: Any]? {
+	guard let input = input else { return nil }
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromNSAttributedStringKey(_ input: NSAttributedString.Key) -> String {
+	return input.rawValue
 }

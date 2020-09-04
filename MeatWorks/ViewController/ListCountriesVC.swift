@@ -22,7 +22,7 @@ class ListCountriesVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tblCountries.estimatedRowHeight = 44
-        self.tblCountries.rowHeight = UITableViewAutomaticDimension
+        self.tblCountries.rowHeight = UITableView.automaticDimension
         // This view controller itself will provide the delegate methods and row data for the table view.
         self.tblCountries.delegate = self
         self.tblCountries.dataSource = self

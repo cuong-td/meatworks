@@ -89,16 +89,16 @@ class AboutViewController: UIViewController {
     func animationRight() -> CATransition {
         let transition = CATransition()
         transition.duration = 0.2
-        transition.subtype = kCATransitionFromRight
-        transition.type = kCATransitionPush
+        transition.subtype = CATransitionSubtype.fromRight
+        transition.type = CATransitionType.push
         return transition
     }
     
     func animationLeft() -> CATransition {
         let transition = CATransition()
         transition.duration = 0.2
-        transition.subtype = kCATransitionFromLeft
-        transition.type = kCATransitionPush
+        transition.subtype = CATransitionSubtype.fromLeft
+        transition.type = CATransitionType.push
         return transition
     }
     

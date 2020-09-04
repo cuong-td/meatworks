@@ -73,7 +73,7 @@ class CheckoutViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
-    func deleteItem(sender: UIButton!) {
+    @objc func deleteItem(sender: UIButton!) {
         let index = sender.tag
         let value: Cart = SData.shared.listCartItems![index] as Cart
         SVProgressHUD.show()
