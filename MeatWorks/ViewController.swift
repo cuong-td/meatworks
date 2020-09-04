@@ -116,7 +116,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     // create a cell for each table view row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:TableCollectViewCell = tableView.dequeueReusableCell(withIdentifier: "TableCollectViewCellId") as! TableCollectViewCell?
+        let cell:TableCollectViewCell = (tableView.dequeueReusableCell(withIdentifier: "TableCollectViewCellId") as! TableCollectViewCell?)!
         cell.delegate = self
         
         let sectionName = Array(SData.shared.listCategories.keys)[indexPath.row]
@@ -151,7 +151,7 @@ extension UIColor {
         var int = UInt32()
         Scanner(string: hex).scanHexInt32(&int)
         let a, r, g, b: UInt32
-        switch hex.characters.count {
+        switch hex.count {
         case 3: // RGB (12-bit)
             (a, r, g, b) = (255, (int >> 8) * 17, (int >> 4 & 0xF) * 17, (int & 0xF) * 17)
         case 6: // RGB (24-bit)
