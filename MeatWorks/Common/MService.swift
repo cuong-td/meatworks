@@ -280,7 +280,10 @@ class MService {
     func postOrder(sale_id: String, fullName: String, phone: String, address: String, direction: String, completion: @escaping (_ success: String?) -> ()) {
         
         let path = apiURL.appending("?action=checkout&sale_id=\(sale_id)&delivery_name=\(fullName)&delivery_tel=\(phone)&delivery_to=\(address)&delivery_direction=\(direction)").replacingOccurrences(of: " ", with: "%20")
-        guard let url = URL(string: path) else {return}
+        guard let url = URL(string: path) else {
+            completion(nil)
+            return
+        }
         request(url: url, method: .get, params: nil) { (response, error) in
             completion(response)
         }
