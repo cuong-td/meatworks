@@ -67,7 +67,7 @@ class DeliveryViewController: UIViewController {
     @IBAction func nextAction(_ sender: AnyObject) {
         self.view.endEditing(true)
         
-        if tfEmail.text == "" || tfAddress.text == "" || tfPhone.text == "" || tfFullname.text == "" {
+        if tfAddress.text == "" || tfPhone.text == "" || tfFullname.text == "" {
             let alert = UIAlertController(title: "alertRequiredFields".localized(), message: nil, preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Ok".localized(), style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
