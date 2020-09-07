@@ -50,7 +50,10 @@ class MService {
         let sqlBase64 = sqlGetListPos.getBase64()
         let path = baseURL.appending(sqlBase64)
         
-        guard let url = URL(string: path) else {return}
+        guard let url = URL(string: path) else {
+            completion(nil)
+            return
+        }
         
         var datas: [Country] = []
         
@@ -72,9 +75,8 @@ class MService {
                         
                     }
                 }
-                
-                completion(datas)
             }
+            completion(datas)
         }
     }
     
@@ -105,9 +107,8 @@ class MService {
                         
                     }
                 }
-                
-                completion(datas)
             }
+            completion(datas)
         }
     }
     
