@@ -2495,8 +2495,8 @@ Drawing upon 20 years of experience in the food and beverage industry in Vietnam
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lbf-yV-LYB">
-                                <rect key="frame" x="60" y="382.5" width="129" height="30"/>
-                                <state key="normal" title="(+848) 3744 2565">
+                                <rect key="frame" x="60" y="382.5" width="138" height="30"/>
+                                <state key="normal" title="(+8428) 3744 2565">
                                     <color key="titleColor" red="0.1450980392" green="0.59215686270000001" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -2521,7 +2521,7 @@ Drawing upon 20 years of experience in the food and beverage industry in Vietnam
                             <constraint firstItem="Vbs-JZ-ScN" firstAttribute="trailing" secondItem="dpw-Lv-m7M" secondAttribute="trailing" constant="20" id="DgF-WV-4MY"/>
                             <constraint firstItem="KSs-sg-gM4" firstAttribute="leading" secondItem="Vbs-JZ-ScN" secondAttribute="leading" constant="20" id="Dnm-vl-gqJ"/>
                             <constraint firstItem="WQk-mD-2Np" firstAttribute="centerY" secondItem="t5l-bd-edy" secondAttribute="centerY" id="EFV-Et-wPa"/>
-                            <constraint firstItem="Vbs-JZ-ScN" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Lbf-yV-LYB" secondAttribute="trailing" constant="20" symbolic="YES" id="HRo-UR-WMP"/>
+                            <constraint firstItem="Vbs-JZ-ScN" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Lbf-yV-LYB" secondAttribute="trailing" symbolic="YES" id="HRo-UR-WMP"/>
                             <constraint firstItem="Eip-5y-1H7" firstAttribute="top" secondItem="VyG-i4-yWx" secondAttribute="bottom" constant="8" id="IHD-Ki-PiX"/>
                             <constraint firstItem="LNA-SY-buD" firstAttribute="leading" secondItem="t5l-bd-edy" secondAttribute="leading" id="L0q-dg-Mdt"/>
                             <constraint firstItem="00l-JB-3Yn" firstAttribute="leading" secondItem="axq-pe-Fo5" secondAttribute="leading" id="LE0-7k-iiI"/>

@@ -22,7 +22,7 @@ class ContactViewController: UIViewController, MFMailComposeViewControllerDelega
     }
     
     @IBAction func callPhone(_ sender: AnyObject) {
-        if let url = NSURL(string: "tel://0837442565"), UIApplication.shared.canOpenURL(url as URL) {
+        if let url = NSURL(string: "tel://02837442565"), UIApplication.shared.canOpenURL(url as URL) {
             UIApplication.shared.openURL(url as URL)
         }
     }
