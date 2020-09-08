@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension String {
     func getBase64() -> String {
@@ -40,5 +41,17 @@ extension Double {
 //        let locale = NSLocale(localeIdentifier: currencyCode)
 //        let currencySymbol = locale.displayName(forKey: .currencySymbol, value: currencyCode) ?? currencyCode
         return (currencyFormatter.string(from: NSNumber(value: self)) ?? "") + currencyCode
+    }
+}
+
+extension UIViewController {
+    func showError(_ err: Error?) -> Bool {
+        guard let msg = err?.localizedDescription else {
+            return false
+        }
+        let alert = UIAlertController(title: "Error", message: msg, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok".localized(), style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        return true
     }
 }

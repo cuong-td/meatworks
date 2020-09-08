@@ -45,13 +45,13 @@ class MService {
         }
     }
     
-    func getPOS(completion: @escaping (_ datas: [Country]?) -> ()) {
+    func getPOS(completion: @escaping (_ datas: [Country]?, _ error: Error?) -> ()) {
         
         let sqlBase64 = sqlGetListPos.getBase64()
         let path = baseURL.appending(sqlBase64)
         
         guard let url = URL(string: path) else {
-            completion(nil)
+            completion(nil, nil)
             return
         }
         
@@ -76,7 +76,7 @@ class MService {
                     }
                 }
             }
-            completion(datas)
+            completion(datas, error)
         }
     }
     
@@ -278,15 +278,15 @@ class MService {
         }
     }
     
-    func postOrder(sale_id: String, fullName: String, phone: String, address: String, direction: String, completion: @escaping (_ success: String?) -> ()) {
+    func postOrder(sale_id: String, fullName: String, phone: String, address: String, direction: String, completion: @escaping (_ success: String?, _ err: Error?) -> ()) {
         
         let path = apiURL.appending("?action=checkout&sale_id=\(sale_id)&delivery_name=\(fullName)&delivery_tel=\(phone)&delivery_to=\(address)&delivery_direction=\(direction)").replacingOccurrences(of: " ", with: "%20")
         guard let url = URL(string: path) else {
-            completion(nil)
+            completion(nil, nil)
             return
         }
         request(url: url, method: .get, params: nil) { (response, error) in
-            completion(response)
+            completion(response, error)
         }
     }
     

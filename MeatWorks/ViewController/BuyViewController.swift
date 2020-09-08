@@ -67,8 +67,11 @@ class BuyViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBAction func buyAction(_ sender: AnyObject) {
         SVProgressHUD.show()
         let deliveryInfo = Meatworks.deliveryInfo
-        MService.shared.postOrder(sale_id: SData.shared.current_saleId!, fullName: (deliveryInfo?.fullname!)!, phone: (deliveryInfo?.phone!)!, address: (deliveryInfo?.address!)!, direction: (deliveryInfo?.direction!)!) { (success) in
+        MService.shared.postOrder(sale_id: SData.shared.current_saleId!, fullName: (deliveryInfo?.fullname!)!, phone: (deliveryInfo?.phone!)!, address: (deliveryInfo?.address!)!, direction: (deliveryInfo?.direction!)!) { (success, err) in
             SVProgressHUD.dismiss()
+            if (self.showError(err)) {
+                return
+            }
             SData.shared.listDetailId.removeAll()
             SData.shared.listCartItems?.removeAll()
             for controller in self.navigationController!.viewControllers as Array {

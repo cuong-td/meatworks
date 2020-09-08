@@ -35,14 +35,17 @@ class CountryViewController: UIViewController, UIPopoverPresentationControllerDe
         
         SVProgressHUD.setDefaultMaskType(.clear)
         SVProgressHUD.show()
-        MService.shared.getPOS() { (listPos) in
+        MService.shared.getPOS() { (listPos, err) in
+            SVProgressHUD.dismiss()
+            if (self.showError(err)) {
+                return
+            }
             if listPos != nil && listPos!.count > 0 {
                 self.listPOS = listPos
                 self.currentSelect = self.listPOS?[0]
                 self.btnSelect.setTitle(self.currentSelect?.pos_name, for: .normal)
                 SData.shared.current_posId = self.currentSelect?.pos_id
             }
-            SVProgressHUD.dismiss()
         }
         
         self.changeText()
