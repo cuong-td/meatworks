@@ -171,29 +171,31 @@ class AddCartViewController: UIViewController, UIPopoverPresentationControllerDe
         let sData = "<orders><products><product_id>\(productId)</product_id><parent_id></parent_id><collection_id></collection_id><color_id></color_id><quantity>\(quantity)</quantity><unit_price>\(unit_price)</unit_price><unit_id>\(unit_id)</unit_id><description>\(description)</description></products></orders>"
         
         if SData.shared.current_saleId == nil {
-            MService.shared.getSale(pos_id: SData.shared.current_posId!) { (sale_Id) in
+            MService.shared.getSale(pos_id: SData.shared.current_posId!) { (sale_Id, err) in
+                if self.showError(err) {
+                    SVProgressHUD.dismiss()
+                    return
+                }
                 if sale_Id != nil {
                     SData.shared.current_saleId = sale_Id
-                    MService.shared.addProduct(sale_id: sale_Id!, pos_id: pos_Id, data: self.formatXMLString(text: sData)) { (saleDetailId) in
+                    MService.shared.addProduct(sale_id: sale_Id!, pos_id: pos_Id, data: self.formatXMLString(text: sData)) { (saleDetailId, err) in
+                        SVProgressHUD.dismiss()
+                        if self.showError(err) { return }
                         if saleDetailId != nil {
                             SData.shared.listDetailId.append(saleDetailId)
                             self.backtoProduct()
                         }
-                        SVProgressHUD.dismiss()
                     }
-                }
-                else {
-                    SVProgressHUD.dismiss()
-                }
+                } else { SVProgressHUD.dismiss() }
             }
-        }
-        else {
-            MService.shared.addProduct(sale_id: SData.shared.current_saleId!, pos_id: pos_Id, data: self.formatXMLString(text: sData)) { (saleDetailId) in
+        } else {
+            MService.shared.addProduct(sale_id: SData.shared.current_saleId!, pos_id: pos_Id, data: self.formatXMLString(text: sData)) { (saleDetailId, err) in
+                SVProgressHUD.dismiss()
+                if self.showError(err) { return }
                 if saleDetailId != nil {
                     SData.shared.listDetailId.append(saleDetailId)
                     self.backtoProduct()
                 }
-                SVProgressHUD.dismiss()
             }
         }
     }

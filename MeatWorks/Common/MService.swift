@@ -247,24 +247,24 @@ class MService {
         }
     }
     
-    func getSale(pos_id: String, completion: @escaping (_ sale_Id: String?) -> ()) {
+    func getSale(pos_id: String, completion: @escaping (_ sale_Id: String?, _ err: Error?) -> ()) {
         let path = apiURL.appending("?action=addSale&pos_id=\(pos_id)")
         guard let url = URL(string: path) else {return}
         request(url: url, method: .get, params: nil) { (response, error) in
-            completion(response)
+            completion(response, error)
         }
     }
     
-    func addProduct(sale_id: String, pos_id: String, data: String, completion: @escaping (_ saleDetailId: String?) -> ()) {
+    func addProduct(sale_id: String, pos_id: String, data: String, completion: @escaping (_ saleDetailId: String?, _ err: Error?) -> ()) {
         
         let path = apiURL.appending("?action=AddProduct&sale_id=\(sale_id)&pos_id=\(pos_id)&sData=\(data)")
         guard let url = URL(string: path) else {return}
         request(url: url, method: .get, params: nil) { (response, error) in
             if (response?.components(separatedBy: "-").count)! > 2 {
-                completion(response)
+                completion(response, error)
             }
             else {
-                completion(nil)
+                completion(nil, error)
             }
         }
     }
