@@ -165,7 +165,7 @@ class AddCartViewController: UIViewController, UIPopoverPresentationControllerDe
         let quantity = "\(self.currentUnit.factor == "1" ? unitBuy : unitBuy / 1000)"
         let unit_price = (self.product?.unit_price?.numFormat() ?? "")!
         let unit_id = (self.product?.unit_id ?? "")!
-        let description = self.txtRemark.text!
+        let description = self.txtRemark.text?.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
         let pos_Id = SData.shared.current_posId!
         
         let sData = "<orders><products><product_id>\(productId)</product_id><parent_id></parent_id><collection_id></collection_id><color_id></color_id><quantity>\(quantity)</quantity><unit_price>\(unit_price)</unit_price><unit_id>\(unit_id)</unit_id><description>\(description)</description></products></orders>"
