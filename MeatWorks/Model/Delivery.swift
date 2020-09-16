@@ -20,12 +20,12 @@ class Delivery: NSObject, NSCoding {
     var fullname           : String?
     
     init(email : String, address : String, phone: String, dDescription: String, direction: String, fullname: String) {
-        self.email          = email
-        self.address        = address
+        self.email          = email.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        self.address        = address.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
         self.phone          = phone
-        self.dDescription    = dDescription
-        self.direction      = direction
-        self.fullname       = fullname
+        self.dDescription    = dDescription.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        self.direction      = direction.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        self.fullname       = fullname.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
     }
     
     required init?(coder aDecoder: NSCoder) {
