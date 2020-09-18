@@ -26,11 +26,16 @@ class CheckoutViewController: UIViewController, UITableViewDelegate, UITableView
         SVProgressHUD.setDefaultMaskType(.clear)
         SVProgressHUD.show()
         
-        MService.shared.getCartItems(saleId: SData.shared.current_saleId!) { (listCartItems) in
+        MService.shared.getCartItems(saleId: SData.shared.current_saleId!) { (listCartItems, err) in
+            SVProgressHUD.dismiss()
+            if (self.showError(err)) {
+                SData.shared.current_saleId = nil
+                SData.shared.listDetailId.removeAll()
+                return
+            }
             SData.shared.listCartItems?.removeAll()
             SData.shared.listCartItems = listCartItems
             self.cTableView.reloadData()
-            SVProgressHUD.dismiss()
         }
     }
 
