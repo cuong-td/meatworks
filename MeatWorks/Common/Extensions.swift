@@ -10,12 +10,6 @@ import Foundation
 import UIKit
 
 extension String {
-    func urlEncoded() -> String {
-        return self
-            .addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)?
-            .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-            ?? ""
-    }
     func getBase64() -> String {
         if let data = self.data(using: String.Encoding.utf8) {
             return data.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))

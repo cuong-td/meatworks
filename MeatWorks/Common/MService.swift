@@ -69,7 +69,6 @@ class MService {
                     if index == 0 {
                         keys = value.components(separatedBy: "\t")
                     } else {
-                        
                         let data = Country.init(keys: keys, values: value.components(separatedBy: "\t"))
                         datas.append(data)
                         
@@ -257,15 +256,15 @@ class MService {
     }
     
     func addProduct(sale_id: String, pos_id: String, data: String, completion: @escaping (_ saleDetailId: String?, _ err: Error?) -> ()) {
-        
-        let path = apiURL.appending("?action=AddProduct&sale_id=\(sale_id)&pos_id=\(pos_id)&sData=\(data)")
+        let query = "action=AddProduct&sale_id=\(sale_id)&pos_id=\(pos_id)&sData=\(data)"
+        let path = apiURL.appending("?").appending(query)
         guard let url = URL(string: path) else {return}
         request(url: url, method: .get, params: nil) { (response, error) in
-            if (response?.components(separatedBy: "-").count)! > 2 {
+            if response?.components(separatedBy: "-").count ?? 0 > 2 {
                 completion(response, error)
             }
             else {
-                completion(nil, error)
+                completion(nil, MWError("Can't add this product to cart, please try again later"))
             }
         }
     }
@@ -280,8 +279,12 @@ class MService {
     }
     
     func postOrder(sale_id: String, fullName: String, phone: String, address: String, direction: String, completion: @escaping (_ success: String?, _ err: Error?) -> ()) {
-        
-        let path = apiURL.appending("?action=checkout&sale_id=\(sale_id)&delivery_name=\(fullName)&delivery_tel=\(phone)&delivery_to=\(address)&delivery_direction=\(direction)").replacingOccurrences(of: " ", with: "%20")
+        let path = "\(apiURL)?action=checkout"
+            .appending("&sale_id=").appending(sale_id)
+            .appending("&delivery_name=").appending(fullName.urlEncoded())
+            .appending("&delivery_tel=").appending(phone)
+            .appending("&delivery_to=").appending(address.urlEncoded())
+            .appending("&delivery_direction=").appending(direction.urlEncoded())
         guard let url = URL(string: path) else {
             completion(nil, nil)
             return
@@ -290,5 +293,10 @@ class MService {
             completion(response, error)
         }
     }
-    
+}
+
+extension String {
+    func urlEncoded() -> String {
+        return addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
+    }
 }

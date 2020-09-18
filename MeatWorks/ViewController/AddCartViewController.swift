@@ -168,7 +168,17 @@ class AddCartViewController: UIViewController, UIPopoverPresentationControllerDe
         let description = self.txtRemark.text ?? ""
         let pos_Id = SData.shared.current_posId!
         
-        let sData = "<orders><products><product_id>\(productId)</product_id><parent_id></parent_id><collection_id></collection_id><color_id></color_id><quantity>\(quantity)</quantity><unit_price>\(unit_price)</unit_price><unit_id>\(unit_id)</unit_id><description>\(description)</description></products></orders>"
+        let sData = "<orders><products><product_id>"
+            .appending(productId)
+            .appending("</product_id><parent_id></parent_id><collection_id></collection_id><color_id></color_id><quantity>")
+            .appending(quantity)
+            .appending("</quantity><unit_price>")
+            .appending(unit_price)
+            .appending("</unit_price><unit_id>")
+            .appending(unit_id)
+            .appending("</unit_id><description>")
+            .appending(description.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "")
+            .appending("</description></products></orders>")
         
         if SData.shared.current_saleId == nil {
             MService.shared.getSale(pos_id: SData.shared.current_posId!) { (sale_Id, err) in
@@ -178,7 +188,7 @@ class AddCartViewController: UIViewController, UIPopoverPresentationControllerDe
                 }
                 if sale_Id != nil {
                     SData.shared.current_saleId = sale_Id
-                    MService.shared.addProduct(sale_id: sale_Id!, pos_id: pos_Id, data: sData) { (saleDetailId, err) in
+                    MService.shared.addProduct(sale_id: sale_Id!, pos_id: pos_Id, data: self.formatXMLString(sData)) { (saleDetailId, err) in
                         SVProgressHUD.dismiss()
                         if self.showError(err) { return }
                         if saleDetailId != nil {
@@ -189,7 +199,7 @@ class AddCartViewController: UIViewController, UIPopoverPresentationControllerDe
                 } else { SVProgressHUD.dismiss() }
             }
         } else {
-            MService.shared.addProduct(sale_id: SData.shared.current_saleId!, pos_id: pos_Id, data: self.formatXMLString(text: sData)) { (saleDetailId, err) in
+            MService.shared.addProduct(sale_id: SData.shared.current_saleId!, pos_id: pos_Id, data: self.formatXMLString(sData)) { (saleDetailId, err) in
                 SVProgressHUD.dismiss()
                 if self.showError(err) { return }
                 if saleDetailId != nil {
@@ -214,7 +224,7 @@ class AddCartViewController: UIViewController, UIPopoverPresentationControllerDe
         // Dispose of any resources that can be recreated.
     }
     
-    func formatXMLString(text: String) -> String {
+    func formatXMLString(_ text: String) -> String {
         let xmlString = text
             .replacingOccurrences(of: "<", with: "%3C")
             .replacingOccurrences(of: ">", with: "%3E")
