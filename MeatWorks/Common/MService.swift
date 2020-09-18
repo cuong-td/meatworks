@@ -213,7 +213,7 @@ class MService {
         }
     }
     
-    func getCartItems(saleId: String, completion: @escaping (_ datas: [Cart]?) -> ()) {
+    func getCartItems(saleId: String, completion: @escaping (_ datas: [Cart]?, _ error: Error?) -> ()) {
         
         let sqlFinal = sqlGetCartItem.format(parameters: saleId)
         let sqlBase64 = sqlFinal.getBase64()
@@ -235,14 +235,15 @@ class MService {
                     if index == 0 {
                         keys = value.components(separatedBy: "\t")
                     } else {
-                        
                         let data = Cart.init(keys: keys, values: value.components(separatedBy: "\t"))
                         datas.append(data)
-                        
                     }
                 }
-                
-                completion(datas)
+            }
+            if datas.isEmpty {
+                completion(nil, MWError("System error, can't fetch data. Please try again later"))
+            } else {
+                completion(datas, error)
             }
         }
     }
