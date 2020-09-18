@@ -215,7 +215,11 @@ class AddCartViewController: UIViewController, UIPopoverPresentationControllerDe
     }
     
     func formatXMLString(text: String) -> String {
-        let xmlString = text.replacingOccurrences(of: "<", with: "%3C").replacingOccurrences(of: ">", with: "%3E").replacingOccurrences(of: "/", with: "%2F").replacingOccurrences(of: " ", with: "+")
+        let xmlString = text
+            .replacingOccurrences(of: "<", with: "%3C")
+            .replacingOccurrences(of: ">", with: "%3E")
+            .replacingOccurrences(of: "/", with: "%2F")
+            .replacingOccurrences(of: " ", with: "+")
         return xmlString
     }
     
