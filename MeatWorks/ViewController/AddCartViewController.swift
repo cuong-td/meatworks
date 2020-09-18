@@ -200,15 +200,6 @@ class AddCartViewController: UIViewController, UIPopoverPresentationControllerDe
         }
     }
     
-    func backtoProduct() {
-        for controller in self.navigationController!.viewControllers as Array {
-            if controller.isKind(of: ViewController.self) {
-                self.navigationController!.popToViewController(controller, animated: true)
-                break
-            }
-        }
-    }
-    
     func textFieldDidEndEditing(_ textField: UITextField) {
         if self.currentUnit.factor == "1" {
             self.stepper.value = Double(textField.text! == "" ? "0" : textField.text!)!

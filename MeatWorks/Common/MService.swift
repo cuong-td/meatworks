@@ -28,9 +28,9 @@ class MService {
     static let shared = MService()
     
     func request (url: URLConvertible, method: HTTPMethod, params: [String: Any]?, completion: @escaping (_ response: String?, _ error: Error?) -> Void) {
-        
+        print("TdcTest-Requesting:  \(url)")
         Alamofire.request(url, method: method, parameters: params, encoding: JSONEncoding.default, headers: nil).responseString { (response) in
-            
+            print("TdcTest-Response:  \(response)")
             guard response.result.isSuccess else {
                 completion(nil, response.result.error)
                 return
