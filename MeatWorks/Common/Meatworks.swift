@@ -40,6 +40,17 @@ struct Meatworks {
     }
 }
 
+struct MWError : LocalizedError {
+    var failureReason: String? { return _msg }
+    var errorDescription: String? { return _msg }
+    
+    private var _msg: String?
+    
+    init(_ message: String?) {
+        _msg = message
+    }
+}
+
 extension DefaultsKeys {
     static let userToken        = DefaultsKey<String?>("userToken")
     static let deliveryInfo     = DefaultsKey<Delivery?>("deliveryInfo")
