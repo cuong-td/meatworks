@@ -213,7 +213,7 @@ class MService {
         }
     }
     
-    func getCartItems(saleId: String, completion: @escaping (_ datas: [Cart]?, _ error: Error?) -> ()) {
+    func getCartItems(saleId: String, completion: @escaping (_ datas: [Cart]?, _ err: Error?) -> ()) {
         
         let sqlFinal = sqlGetCartItem.format(parameters: saleId)
         let sqlBase64 = sqlFinal.getBase64()
