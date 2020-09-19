@@ -166,7 +166,7 @@ class AddCartViewController: UIViewController, UIPopoverPresentationControllerDe
         let unit_price = (self.product?.unit_price?.numFormat() ?? "")!
         let unit_id = (self.product?.unit_id ?? "")!
         let description = self.txtRemark.text ?? ""
-        let pos_Id = SData.shared.current_posId!
+        let pos_Id = SData.shared.current_posId ?? ""
         
         let sData = "<orders><products><product_id>"
             .appending(productId)
@@ -181,31 +181,28 @@ class AddCartViewController: UIViewController, UIPopoverPresentationControllerDe
             .appending("</description></products></orders>")
         
         if SData.shared.current_saleId == nil {
-            MService.shared.getSale(pos_id: SData.shared.current_posId!) { (sale_Id, err) in
+            MService.shared.getSale(pos_id: pos_Id) { (sale_Id, err) in
                 if self.showError(err) {
                     SVProgressHUD.dismiss()
                     return
                 }
                 if sale_Id != nil {
                     SData.shared.current_saleId = sale_Id
-                    MService.shared.addProduct(sale_id: sale_Id!, pos_id: pos_Id, data: self.formatXMLString(sData)) { (saleDetailId, err) in
-                        SVProgressHUD.dismiss()
-                        if self.showError(err) { return }
-                        if saleDetailId != nil {
-                            SData.shared.listDetailId.append(saleDetailId)
-                            self.backtoProduct()
-                        }
-                    }
+                    self.addProduct(SData.shared.current_saleId ?? "", pos_Id, sData)
                 } else { SVProgressHUD.dismiss() }
             }
         } else {
-            MService.shared.addProduct(sale_id: SData.shared.current_saleId!, pos_id: pos_Id, data: self.formatXMLString(sData)) { (saleDetailId, err) in
-                SVProgressHUD.dismiss()
-                if self.showError(err) { return }
-                if saleDetailId != nil {
-                    SData.shared.listDetailId.append(saleDetailId)
-                    self.backtoProduct()
-                }
+            self.addProduct(SData.shared.current_saleId ?? "", pos_Id, sData)
+        }
+    }
+    
+    func addProduct(_ saleId: String, _ posId: String, _ rawData: String) {
+        MService.shared.addProduct(sale_id: saleId, pos_id: posId, data: self.formatXMLString(rawData)) { (saleDetailId, err) in
+            SVProgressHUD.dismiss()
+            if self.showError(err) { return }
+            if saleDetailId != nil {
+                SData.shared.listDetailId.append(saleDetailId)
+                self.backtoProduct()
             }
         }
     }
