@@ -14,44 +14,6 @@
 		619ECDFB1F8242AD0043524B /* FoodViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619ECDFA1F8242AD0043524B /* FoodViewCell.swift */; };
 		619ECDFD1F8245AB0043524B /* BeverageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619ECDFC1F8245AB0043524B /* BeverageViewCell.swift */; };
 		800DC3D1A90194E666402175 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		B1E69699209AC79200B6FD1B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3609B4B1F97BA8600D64D56 /* RegisterViewController.swift */; };
-		B1E6969A209AC79200B6FD1B /* Meatworks.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3558FCB1F9A554B00E31CE4 /* Meatworks.swift */; };
-		B1E6969B209AC79200B6FD1B /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35F55BC1F8876E10097A3C5 /* Food.swift */; };
-		B1E6969C209AC79200B6FD1B /* Beverage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35F55BD1F8876E10097A3C5 /* Beverage.swift */; };
-		B1E6969D209AC79200B6FD1B /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31590F81F9F787000A77972 /* Cart.swift */; };
-		B1E6969E209AC79200B6FD1B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3558FCD1F9A55D100E31CE4 /* User.swift */; };
-		B1E6969F209AC79200B6FD1B /* DeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C8D3631F8A1CDE009C7340 /* DeliveryViewController.swift */; };
-		B1E696A0209AC79200B6FD1B /* BuyTbViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FCDCB61F8A2F9A009260A6 /* BuyTbViewCell.swift */; };
-		B1E696A1209AC79200B6FD1B /* DetailHdCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F03C8D1F89301E00250205 /* DetailHdCollectionCell.swift */; };
-		B1E696A2209AC79200B6FD1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C019E21F7FEF190042B832 /* ViewController.swift */; };
-		B1E696A3209AC79200B6FD1B /* BuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FCDCB41F8A2E91009260A6 /* BuyViewController.swift */; };
-		B1E696A4209AC79200B6FD1B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C019F21F8001A60042B832 /* MenuViewController.swift */; };
-		B1E696A5209AC79200B6FD1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C019E01F7FEF190042B832 /* AppDelegate.swift */; };
-		B1E696A6209AC79200B6FD1B /* ListCountriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F567031F996A02008D7E12 /* ListCountriesVC.swift */; };
-		B1E696A7209AC79200B6FD1B /* FoodViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619ECDFA1F8242AD0043524B /* FoodViewCell.swift */; };
-		B1E696A8209AC79200B6FD1B /* MService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35F55BF1F8877020097A3C5 /* MService.swift */; };
-		B1E696A9209AC79200B6FD1B /* CheckoutViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C8D3611F8A11D2009C7340 /* CheckoutViewCell.swift */; };
-		B1E696AA209AC79200B6FD1B /* SData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35F55C31F887FC70097A3C5 /* SData.swift */; };
-		B1E696AB209AC79200B6FD1B /* AddCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F03C8F1F89427000250205 /* AddCartViewController.swift */; };
-		B1E696AC209AC79200B6FD1B /* Delivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31590FD1F9FA83000A77972 /* Delivery.swift */; };
-		B1E696AD209AC79200B6FD1B /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610BA7A11F822038009B49B3 /* AboutViewController.swift */; };
-		B1E696AE209AC79200B6FD1B /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FCDCBA1F8A5050009260A6 /* Category.swift */; };
-		B1E696AF209AC79200B6FD1B /* BeverageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619ECDFC1F8245AB0043524B /* BeverageViewCell.swift */; };
-		B1E696B0209AC79200B6FD1B /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FCDCB91F8A504F009260A6 /* Product.swift */; };
-		B1E696B1209AC79200B6FD1B /* HeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D335F17B1F80E99500E10127 /* HeaderViewCell.swift */; };
-		B1E696B2209AC79200B6FD1B /* DetailCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F03C8B1F892C3E00250205 /* DetailCollectionCell.swift */; };
-		B1E696B3209AC79200B6FD1B /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619ECDF81F8227060043524B /* ContactViewController.swift */; };
-		B1E696B4209AC79200B6FD1B /* TableCollectViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F03C871F88D40400250205 /* TableCollectViewCell.swift */; };
-		B1E696B5209AC79200B6FD1B /* GroupUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FCDCBE1F8A65E2009260A6 /* GroupUnit.swift */; };
-		B1E696B6209AC79200B6FD1B /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C8D35F1F8A0C38009C7340 /* CheckoutViewController.swift */; };
-		B1E696B7209AC79200B6FD1B /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA3A451F990BC20075548E /* CountryViewController.swift */; };
-		B1E696B8209AC79200B6FD1B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3609B491F97AF7200D64D56 /* LoginViewController.swift */; };
-		B1E696B9209AC79200B6FD1B /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F567051F996AE9008D7E12 /* Country.swift */; };
-		B1E696BA209AC79200B6FD1B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F03C891F89078200250205 /* DetailViewController.swift */; };
-		B1E696BE209AC79200B6FD1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3C019E91F7FEF190042B832 /* LaunchScreen.storyboard */; };
-		B1E696BF209AC79200B6FD1B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3609B471F97A03300D64D56 /* Localizable.strings */; };
-		B1E696C1209AC79200B6FD1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3C019E41F7FEF190042B832 /* Main.storyboard */; };
-		B4886274F31CC461A1A60F6E /* libPods-TRG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F108E8727D71807C7FF6355F /* libPods-TRG.a */; };
 		D31590F91F9F787000A77972 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31590F81F9F787000A77972 /* Cart.swift */; };
 		D31590FE1F9FA83000A77972 /* Delivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31590FD1F9FA83000A77972 /* Delivery.swift */; };
 		D335F17C1F80E99500E10127 /* HeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D335F17B1F80E99500E10127 /* HeaderViewCell.swift */; };
@@ -96,7 +58,6 @@
 		619ECDFC1F8245AB0043524B /* BeverageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeverageViewCell.swift; sourceTree = "<group>"; };
 		98C29DCACF97BF7A6CA8FCEF /* Pods_MeatWorks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeatWorks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA5B4551BFC5EE60D9CE88C5 /* Pods-TRG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TRG.release.xcconfig"; path = "Pods/Target Support Files/Pods-TRG/Pods-TRG.release.xcconfig"; sourceTree = "<group>"; };
-		B1E696C8209AC79200B6FD1B /* TRG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TRG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B39E9879755687D31F2B0DB5 /* Pods-MeatWorks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeatWorks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeatWorks/Pods-MeatWorks.debug.xcconfig"; sourceTree = "<group>"; };
 		C3B2999653A650A9A23170B0 /* Pods-TRG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TRG.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TRG/Pods-TRG.debug.xcconfig"; sourceTree = "<group>"; };
 		D31590F81F9F787000A77972 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
@@ -141,14 +102,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B1E696BB209AC79200B6FD1B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B4886274F31CC461A1A60F6E /* libPods-TRG.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D3C019DA1F7FEF190042B832 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -255,7 +208,6 @@
 			isa = PBXGroup;
 			children = (
 				D3C019DD1F7FEF190042B832 /* MeatWorks.app */,
-				B1E696C8209AC79200B6FD1B /* TRG.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -282,25 +234,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B1E69696209AC79200B6FD1B /* TRG */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B1E696C5209AC79200B6FD1B /* Build configuration list for PBXNativeTarget "TRG" */;
-			buildPhases = (
-				B1E69697209AC79200B6FD1B /* [CP] Check Pods Manifest.lock */,
-				B1E69698209AC79200B6FD1B /* Sources */,
-				B1E696BB209AC79200B6FD1B /* Frameworks */,
-				B1E696BD209AC79200B6FD1B /* Resources */,
-				B1E696C4209AC79200B6FD1B /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = TRG;
-			productName = MeatWorks;
-			productReference = B1E696C8209AC79200B6FD1B /* TRG.app */;
-			productType = "com.apple.product-type.application";
-		};
 		D3C019DC1F7FEF190042B832 /* MeatWorks */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3C019EF1F7FEF190042B832 /* Build configuration list for PBXNativeTarget "MeatWorks" */;
@@ -331,9 +264,6 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Bzb;
 				TargetAttributes = {
-					B1E69696209AC79200B6FD1B = {
-						ProvisioningStyle = Automatic;
-					};
 					D3C019DC1F7FEF190042B832 = {
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 1170;
@@ -355,22 +285,11 @@
 			projectRoot = "";
 			targets = (
 				D3C019DC1F7FEF190042B832 /* MeatWorks */,
-				B1E69696209AC79200B6FD1B /* TRG */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		B1E696BD209AC79200B6FD1B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B1E696BE209AC79200B6FD1B /* LaunchScreen.storyboard in Resources */,
-				B1E696BF209AC79200B6FD1B /* Localizable.strings in Resources */,
-				B1E696C1209AC79200B6FD1B /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D3C019DB1F7FEF190042B832 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -445,37 +364,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MeatWorks/Pods-MeatWorks-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B1E69697209AC79200B6FD1B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TRG-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B1E696C4209AC79200B6FD1B /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 70e7c59c1b6a827ec4dd8dc61d4cf05bc2f3ec1f ed9ccea1b779e9fed419c8144d378e2a36487f703a5f606e1e21138991727a1c";
-		};
 		D30A085D1FA0D765005F0AF8 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -492,47 +380,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		B1E69698209AC79200B6FD1B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B1E69699209AC79200B6FD1B /* RegisterViewController.swift in Sources */,
-				B1E6969A209AC79200B6FD1B /* Meatworks.swift in Sources */,
-				B1E6969B209AC79200B6FD1B /* Food.swift in Sources */,
-				B1E6969C209AC79200B6FD1B /* Beverage.swift in Sources */,
-				B1E6969D209AC79200B6FD1B /* Cart.swift in Sources */,
-				B1E6969E209AC79200B6FD1B /* User.swift in Sources */,
-				B1E6969F209AC79200B6FD1B /* DeliveryViewController.swift in Sources */,
-				B1E696A0209AC79200B6FD1B /* BuyTbViewCell.swift in Sources */,
-				B1E696A1209AC79200B6FD1B /* DetailHdCollectionCell.swift in Sources */,
-				B1E696A2209AC79200B6FD1B /* ViewController.swift in Sources */,
-				B1E696A3209AC79200B6FD1B /* BuyViewController.swift in Sources */,
-				B1E696A4209AC79200B6FD1B /* MenuViewController.swift in Sources */,
-				B1E696A5209AC79200B6FD1B /* AppDelegate.swift in Sources */,
-				B1E696A6209AC79200B6FD1B /* ListCountriesVC.swift in Sources */,
-				B1E696A7209AC79200B6FD1B /* FoodViewCell.swift in Sources */,
-				B1E696A8209AC79200B6FD1B /* MService.swift in Sources */,
-				B1E696A9209AC79200B6FD1B /* CheckoutViewCell.swift in Sources */,
-				B1E696AA209AC79200B6FD1B /* SData.swift in Sources */,
-				B1E696AB209AC79200B6FD1B /* AddCartViewController.swift in Sources */,
-				B1E696AC209AC79200B6FD1B /* Delivery.swift in Sources */,
-				B1E696AD209AC79200B6FD1B /* AboutViewController.swift in Sources */,
-				B1E696AE209AC79200B6FD1B /* Category.swift in Sources */,
-				B1E696AF209AC79200B6FD1B /* BeverageViewCell.swift in Sources */,
-				B1E696B0209AC79200B6FD1B /* Product.swift in Sources */,
-				B1E696B1209AC79200B6FD1B /* HeaderViewCell.swift in Sources */,
-				B1E696B2209AC79200B6FD1B /* DetailCollectionCell.swift in Sources */,
-				B1E696B3209AC79200B6FD1B /* ContactViewController.swift in Sources */,
-				B1E696B4209AC79200B6FD1B /* TableCollectViewCell.swift in Sources */,
-				B1E696B5209AC79200B6FD1B /* GroupUnit.swift in Sources */,
-				B1E696B6209AC79200B6FD1B /* CheckoutViewController.swift in Sources */,
-				B1E696B7209AC79200B6FD1B /* CountryViewController.swift in Sources */,
-				B1E696B8209AC79200B6FD1B /* LoginViewController.swift in Sources */,
-				B1E696B9209AC79200B6FD1B /* Country.swift in Sources */,
-				B1E696BA209AC79200B6FD1B /* DetailViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D3C019D91F7FEF190042B832 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -606,42 +453,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		B1E696C6209AC79200B6FD1B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C3B2999653A650A9A23170B0 /* Pods-TRG.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4Y4ALAVL59;
-				INFOPLIST_FILE = "$(SRCROOT)/trg.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.trg;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
-		B1E696C7209AC79200B6FD1B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AA5B4551BFC5EE60D9CE88C5 /* Pods-TRG.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4Y4ALAVL59;
-				INFOPLIST_FILE = "$(SRCROOT)/trg.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.trg;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
 		D3C019ED1F7FEF190042B832 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -697,7 +508,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -748,7 +559,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -798,15 +609,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B1E696C5209AC79200B6FD1B /* Build configuration list for PBXNativeTarget "TRG" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B1E696C6209AC79200B6FD1B /* Debug */,
-				B1E696C7209AC79200B6FD1B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		D3C019D81F7FEF190042B832 /* Build configuration list for PBXProject "MeatWorks" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
