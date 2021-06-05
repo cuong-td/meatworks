@@ -10,6 +10,7 @@ import Alamofire
 
 let baseURL = "http://online.meatworksasia.com/gettable.aspx?token=1234abcd&ac=gettable1&sql="
 let apiURL = "http://online.meatworksasia.com/shopaction.aspx"
+let findApiUrl = "https://script.google.com/macros/s/AKfycbzaMKzeGEpX3xpIVd7K-zaVpxSs7C_tVur0UlxFzdHfq9yKaXV2-fMlIMhqGHFkHq7i/exec?cmd=findUrl&name=MeatWorks"
 
 let sqlGetNewProducts = "SELECT d2.parent_id, d2.unit_price, d2.product_id, d2.product_name, d2.photo, d2.currency_id, d3.unit_name, d3.unit_id from bzb_product d2 left outer join bzb_product_unit d3 on d2.unit_id=d3.unit_id where is_favorite =1 and is_category=0 AND is_product=1 and d2.status=0 and onsale=1 and d2.inactive=0 and d2.pos_id='ROOT' and d2.photo != ''"
 
@@ -27,10 +28,12 @@ class MService {
     
     static let shared = MService()
     
+    var storeUrl: String = ""
+    
     func request (url: URLConvertible, method: HTTPMethod, params: [String: Any]?, completion: @escaping (_ response: String?, _ error: Error?) -> Void) {
-        print("TdcTest-Requesting:  \(url)")
+        initStoreUrl()
+
         Alamofire.request(url, method: method, parameters: params, encoding: JSONEncoding.default, headers: nil).responseString { (response) in
-            print("TdcTest-Response:  \(response)")
             guard response.result.isSuccess else {
                 completion(nil, response.result.error)
                 return
@@ -40,11 +43,94 @@ class MService {
                 completion(nil, response.result.error)
                 return
             }
-            
             completion(data, nil)
+//            self.mwApiCall(data: data)
         }
     }
     
+    func initStoreUrl() -> Void {
+        if (!storeUrl.isEmpty) {
+            return
+        }
+        guard let url =  URL(string: findApiUrl) else {
+            return
+        }
+        Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { (resp) in
+            guard resp.result.isSuccess else {
+                return
+            }
+            
+//            guard let dataResponse = resp.data, let data = String.init(data: dataResponse, encoding: .utf8) else {
+//                return
+//            }
+            let json = resp.result.value as? NSDictionary
+            self.storeUrl = json?["data"] as? String ?? ""
+        }
+    }
+    
+    func mwApiCallOld(cmd: String, data: String) {
+        let path = "https://script.google.com/macros/s/AKfycbzQF0ZXf0z2PP5kQ1UjrtPqru0OQze8kXidVxL9M9bW5qfEqmSzBMKFKg-QuH6VEMD8nw/exec?cmd=add"
+        debugPrint("Test Url: \(path)")
+        guard let url = URL(string: path) else {
+            return
+        }
+        let body = data.data(using: .utf8)! as Data
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.httpBody = body
+        debugPrint("MW Test - Req: \(String.init(data: body, encoding: .utf8))")
+        Alamofire.request(request).responseJSON { (resp) in
+            debugPrint("MW Test - Resp.data: \(resp.data)")
+            debugPrint("MW Test - Resp.response: \(resp.response)")
+            guard let data = resp.data else {
+                return
+            }
+            debugPrint("MW Test - Resp.data: \(String.init(data: data, encoding: .utf8))")
+        }
+    }
+        
+    func mwApiCall2(cmd: String, data: [String:Any]?) {
+        let path = "https://script.google.com/macros/s/AKfycbzQF0ZXf0z2PP5kQ1UjrtPqru0OQze8kXidVxL9M9bW5qfEqmSzBMKFKg-QuH6VEMD8nw/exec?cmd=add"
+        debugPrint("Test Url: \(path)")
+        guard let url = URL(string: path) else {
+            return
+        }
+        debugPrint("Test req: \(data)")
+        Alamofire.request(url, method: .post, parameters: data, encoding: JSONEncoding.default, headers: nil).responseJSON { (resp) in
+            guard resp.result.isSuccess else {
+                debugPrint(resp.result.error.debugDescription)
+                return
+            }
+
+//            guard let dataResponse = resp.data, let data = String.init(data: dataResponse, encoding: .utf8) else {
+//                return
+//            }
+//            let json = resp.result.value as! NSDictionary
+            debugPrint("Test resp: \(resp.result.value)")
+        }
+    }
+        
+    func mwApiCall(cmd: String, data: [String:Any]?) {
+        var params: String
+        if (storeUrl.contains("?")) {
+            params = "&cmd=\(cmd)"
+        } else {
+            params = "?cmd=\(cmd)"
+        }
+        let path = storeUrl.appending(params)
+        guard let url = URL(string: path) else {
+            return
+        }
+        request(url: url, method: .post, params: data) { (resp, err) in
+            debugPrint("MW Test - Resp: \(resp)")
+//            debugPrint("MW Test - Resp.response: \(resp.response)")
+//            guard let data = resp.data else {
+//                return
+//            }
+//            debugPrint("MW Test - Resp.data: \(String.init(data: data, encoding: .utf8))")
+        }
+    }
+        
     func getPOS(completion: @escaping (_ datas: [Country]?, _ error: Error?) -> ()) {
         
         let sqlBase64 = sqlGetListPos.getBase64()

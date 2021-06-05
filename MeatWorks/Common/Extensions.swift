@@ -64,3 +64,21 @@ extension UIViewController {
         }
     }
 }
+
+extension Encodable {
+
+    public var headerDictionary: [String: String]? {
+        guard let data = try? JSONEncoder().encode(self) else { return nil }
+        return (try? JSONSerialization.jsonObject(with: data, options: .allowFragments)).flatMap { $0 as? [String: String] }
+    }
+    
+    public var parameterDictionary: [String: Any]? {
+        let encoder = JSONEncoder()
+        encoder.dateEncodingStrategy = .deferredToDate
+        guard let json = try? encoder.encode(self),
+            let dict = try? JSONSerialization.jsonObject(with: json, options: []) as? [String: Any] else {
+                return nil
+        }
+        return dict
+    }
+}

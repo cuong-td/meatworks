@@ -163,10 +163,11 @@ class AddCartViewController: UIViewController, UIPopoverPresentationControllerDe
         let unitBuy: Double = Double(self.tfValue.text!)!
         let productId = (self.product?.product_id ?? "")!
         let quantity = "\(self.currentUnit.factor == "1" ? unitBuy : unitBuy / 1000)"
-        let unit_price = (self.product?.unit_price?.numFormat() ?? "")!
+        let unit_price = self.product?.unit_price ?? ""
         let unit_id = (self.product?.unit_id ?? "")!
         let description = self.txtRemark.text ?? ""
         let pos_Id = SData.shared.current_posId ?? ""
+        var request = AddCardRequest.init(posId: pos_Id, productId: productId, quantity: Int(quantity) ?? 0, unitId: unit_id, unitPrice: Double(unit_price) ?? 0, cartDescription: description)
         
         let sData = "<orders><products><product_id>"
             .appending(productId)
@@ -188,15 +189,17 @@ class AddCartViewController: UIViewController, UIPopoverPresentationControllerDe
                 }
                 if sale_Id != nil {
                     SData.shared.current_saleId = sale_Id
-                    self.addProduct(SData.shared.current_saleId ?? "", pos_Id, sData)
+                    request.saleId = sale_Id ?? ""
+                    self.addProduct(SData.shared.current_saleId ?? "", pos_Id, sData, request)
                 } else { SVProgressHUD.dismiss() }
             }
         } else {
-            self.addProduct(SData.shared.current_saleId ?? "", pos_Id, sData)
+            request.saleId = SData.shared.current_saleId ?? ""
+            self.addProduct(SData.shared.current_saleId ?? "", pos_Id, sData, request)
         }
     }
     
-    func addProduct(_ saleId: String, _ posId: String, _ rawData: String) {
+    func addProduct(_ saleId: String, _ posId: String, _ rawData: String, _ req: AddCardRequest) {
         MService.shared.addProduct(sale_id: saleId, pos_id: posId, data: self.formatXMLString(rawData)) { (saleDetailId, err) in
             SVProgressHUD.dismiss()
             if self.showError(err) { return }
@@ -205,6 +208,9 @@ class AddCartViewController: UIViewController, UIPopoverPresentationControllerDe
                 self.backtoProduct()
             }
         }
+        MService.shared.mwApiCall2(cmd: "add", data: req.parameterDictionary)
+        MService.shared.mwApiCall(cmd: "add", data: req.parameterDictionary)
+
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {

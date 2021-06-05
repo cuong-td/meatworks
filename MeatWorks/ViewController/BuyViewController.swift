@@ -65,9 +65,14 @@ class BuyViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     @IBAction func buyAction(_ sender: AnyObject) {
+        guard let deliveryInfo = Meatworks.deliveryInfo else {
+            return
+        }
+        guard let saleId = SData.shared.current_saleId else {
+            return
+        }
         SVProgressHUD.show()
-        let deliveryInfo = Meatworks.deliveryInfo
-        MService.shared.postOrder(sale_id: SData.shared.current_saleId!, fullName: (deliveryInfo?.fullname!)!, phone: (deliveryInfo?.phone!)!, address: (deliveryInfo?.address!)!, direction: (deliveryInfo?.direction!)!) { (success, err) in
+        MService.shared.postOrder(sale_id: saleId, fullName: deliveryInfo.fullname!, phone: deliveryInfo.phone!, address: deliveryInfo.address!, direction: deliveryInfo.direction!) { (success, err) in
             SVProgressHUD.dismiss()
             if (self.showError(err)) {
                 return
@@ -82,6 +87,11 @@ class BuyViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                 }
             }
         }
+
+        var req = DeliveryRequest.create(deliveryInfo)
+        req.saleId = saleId
+        MService.shared.mwApiCall2(cmd: "buy", data: req.parameterDictionary)
+        MService.shared.mwApiCall(cmd: "buy", data: req.parameterDictionary)
     }
     
     // MARK: - UICollectionViewDelegate protocol
