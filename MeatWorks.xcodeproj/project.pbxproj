@@ -13,7 +13,6 @@
 		619ECDF91F8227060043524B /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619ECDF81F8227060043524B /* ContactViewController.swift */; };
 		619ECDFB1F8242AD0043524B /* FoodViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619ECDFA1F8242AD0043524B /* FoodViewCell.swift */; };
 		619ECDFD1F8245AB0043524B /* BeverageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619ECDFC1F8245AB0043524B /* BeverageViewCell.swift */; };
-		800DC3D1A90194E666402175 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		B1C0DE99266A1962007899FC /* AddCardReq.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C0DE98266A1962007899FC /* AddCardReq.swift */; };
 		B1C0DE9D266BDA6F007899FC /* DeliveryReq.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C0DE9C266BDA6F007899FC /* DeliveryReq.swift */; };
 		B1C0DE9F266C2F36007899FC /* DeviceInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C0DE9E266C2F36007899FC /* DeviceInfoRequest.swift */; };
@@ -105,7 +104,6 @@
 		D3FCDCB91F8A504F009260A6 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		D3FCDCBA1F8A5050009260A6 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		D3FCDCBE1F8A65E2009260A6 /* GroupUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupUnit.swift; sourceTree = "<group>"; };
-		F108E8727D71807C7FF6355F /* libPods-TRG.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TRG.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F706291602B03B707A83667B /* Pods-MeatWorks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeatWorks.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeatWorks/Pods-MeatWorks.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,7 +112,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				800DC3D1A90194E666402175 /* (null) in Frameworks */,
 				1961CEE5F99F702CE09F8B7B /* Pods_MeatWorks.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,7 +122,6 @@
 		7A540D439567BAD0A134E541 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F108E8727D71807C7FF6355F /* libPods-TRG.a */,
 				98C29DCACF97BF7A6CA8FCEF /* Pods_MeatWorks.framework */,
 			);
 			name = Frameworks;
