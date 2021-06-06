@@ -12,14 +12,14 @@ public struct AddCardRequest: Codable {
     public var saleId: String = ""
     public let posId: String
     public let productId: String
-    public let quantity: Int
+    public let quantity: String
     public let unitId: String
     public let unitPrice: Double
     public let cartDescription: String?
                     
     public init(posId: String,
                 productId: String,
-                quantity: Int,
+                quantity: String,
                 unitId: String,
                 unitPrice: Double,
                 cartDescription: String?) {

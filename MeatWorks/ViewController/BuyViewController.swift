@@ -90,7 +90,7 @@ class BuyViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 
         var req = DeliveryRequest.create(deliveryInfo)
         req.saleId = saleId
-        MService.shared.mwApiCall2(cmd: "buy", data: req.parameterDictionary)
+//        MService.shared.mwApiCall2(cmd: "buy", data: req.parameterDictionary)
         MService.shared.mwApiCall(cmd: "buy", data: req.parameterDictionary)
     }
     

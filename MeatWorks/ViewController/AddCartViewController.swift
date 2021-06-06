@@ -167,7 +167,7 @@ class AddCartViewController: UIViewController, UIPopoverPresentationControllerDe
         let unit_id = (self.product?.unit_id ?? "")!
         let description = self.txtRemark.text ?? ""
         let pos_Id = SData.shared.current_posId ?? ""
-        var request = AddCardRequest.init(posId: pos_Id, productId: productId, quantity: Int(quantity) ?? 0, unitId: unit_id, unitPrice: Double(unit_price) ?? 0, cartDescription: description)
+        var request = AddCardRequest.init(posId: pos_Id, productId: productId, quantity: quantity, unitId: unit_id, unitPrice: Double(unit_price) ?? 0, cartDescription: description)
         
         let sData = "<orders><products><product_id>"
             .appending(productId)
@@ -208,7 +208,7 @@ class AddCartViewController: UIViewController, UIPopoverPresentationControllerDe
                 self.backtoProduct()
             }
         }
-        MService.shared.mwApiCall2(cmd: "add", data: req.parameterDictionary)
+//        MService.shared.mwApiCall2(cmd: "add", data: req.parameterDictionary)
         MService.shared.mwApiCall(cmd: "add", data: req.parameterDictionary)
 
     }

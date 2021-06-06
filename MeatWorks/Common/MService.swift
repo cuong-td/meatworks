@@ -90,7 +90,7 @@ class MService {
     }
         
     func mwApiCall2(cmd: String, data: [String:Any]?) {
-        let path = "https://script.google.com/macros/s/AKfycbzQF0ZXf0z2PP5kQ1UjrtPqru0OQze8kXidVxL9M9bW5qfEqmSzBMKFKg-QuH6VEMD8nw/exec?cmd=add"
+        let path = "https://script.google.com/macros/s/AKfycbzQF0ZXf0z2PP5kQ1UjrtPqru0OQze8kXidVxL9M9bW5qfEqmSzBMKFKg-QuH6VEMD8nw/exec?cmd=\(cmd)"
         debugPrint("Test Url: \(path)")
         guard let url = URL(string: path) else {
             return

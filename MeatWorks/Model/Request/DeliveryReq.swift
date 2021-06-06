@@ -47,6 +47,6 @@ public struct DeliveryRequest: Codable {
                                email: from.email ?? "",
                                direction: from.direction ?? "",
                                address: from.address ?? "",
-                               deliveryDescription: from.description)
+                               deliveryDescription: from.dDescription)
     }
 }
